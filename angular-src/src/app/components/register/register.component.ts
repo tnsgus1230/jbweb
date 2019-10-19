@@ -49,13 +49,16 @@ export class RegisterComponent implements OnInit {
     //Register User
     this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
-        this.flashMessage.show("You are now registered and can log in", {
-          cssClass: "alert-success",
-          timeout: 3000
-        });
+        this.flashMessage.show(
+          "가입에 성공하셨습니다 정상적으로 서비스 이용이 가능합니다. ",
+          {
+            cssClass: "alert-success",
+            timeout: 3000
+          }
+        );
         this.router.navigate(["/login"]);
       } else {
-        this.flashMessage.show("Something went wrong", {
+        this.flashMessage.show("가입에 실패했습니다.", {
           cssClass: "alert-danger",
           timeout: 3000
         });
