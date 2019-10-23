@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   username: string;
   email: string;
   password: string;
+  password2: string;
   constructor(
     private validateService: ValidateService,
     private flashMessage: FlashMessagesService,
@@ -27,7 +28,8 @@ export class RegisterComponent implements OnInit {
       name: this.name,
       email: this.email,
       username: this.username,
-      password: this.password
+      password: this.password,
+      password2: this.password2
     };
     //Require Fileds
     if (!this.validateService.validateRegister(user)) {
@@ -45,18 +47,26 @@ export class RegisterComponent implements OnInit {
       });
       return false;
     }
-
+    //비밀번호 가 다를시
+    if (this.password != this.password2) {
+      this.flashMessage.show("두 비밀번호가 일치하지 않습니다. ", {
+        cssClass: "alert-danger",
+        timeout: 3000
+      });
+    }
     //Register User
     this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
-        this.flashMessage.show(
-          "가입에 성공하셨습니다 정상적으로 서비스 이용이 가능합니다. ",
-          {
-            cssClass: "alert-success",
-            timeout: 3000
-          }
-        );
-        this.router.navigate(["/login"]);
+        if (this.password == this.password2) {
+          this.flashMessage.show(
+            "가입에 성공하셨습니다 정상적으로 서비스 이용이 가능합니다. ",
+            {
+              cssClass: "alert-success",
+              timeout: 3000
+            }
+          );
+          this.router.navigate(["/login"]);
+        }
       } else {
         this.flashMessage.show("가입에 실패했습니다.", {
           cssClass: "alert-danger",

@@ -5,10 +5,11 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from "./components/home/home.component";
+
+import {BoardComponent} from "./components/board/board.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { AuthGuard } from "./guards/auth.guards";
-
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "navbar", component: NavbarComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard]
   },
-  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] }
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
+  {path: "board", component: BoardComponent}
 ];
 
 @NgModule({

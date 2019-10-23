@@ -5,7 +5,7 @@ const cors = require("cors");
 const passport = require("passport");
 const mongoose = require("mongoose");
 const users = require("./routes/users");
-
+const addbor = require("./routes/addbor");
 const app = express();
 const port = 3000;
 const config = require("./config/database");
@@ -27,7 +27,9 @@ app.use(passport.session());
 require("./config/passport")(passport);
 
 app.use("/users", users);
+
 app.use(express.static(path.join(__dirname, "Public")));
+app.use("/addbor", addbor);
 
 app.get("/", (reg, res) => {
   res.send("<h1> testing</h1><br/><h2>second line</h2>");

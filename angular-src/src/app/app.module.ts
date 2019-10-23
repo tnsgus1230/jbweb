@@ -18,6 +18,7 @@ import { FlashMessagesModule } from "angular2-flash-messages";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { AuthGuard } from "./guards/auth.guards";
 import { JwtModule } from "@auth0/angular-jwt";
+import { BoardComponent } from './components/board/board.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { JwtModule } from "@auth0/angular-jwt";
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
