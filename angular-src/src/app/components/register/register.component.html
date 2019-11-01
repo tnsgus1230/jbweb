@@ -1,11 +1,11 @@
 <h2 class="page-header">Register</h2>
 <form (ngSubmit)="onRegisterSubmit()">
   <div class="form-group">
-    <label> Name </label>
+    <label> 아이디 </label>
     <input type="text" [(ngModel)]="name" name="name" class="form-control" />
   </div>
   <div class="form-group">
-    <label> Username </label>
+    <label> 닉네임 </label>
     <input
       type="text"
       [(ngModel)]="username"
@@ -18,7 +18,7 @@
     <input type="text" [(ngModel)]="email" name="email" class="form-control" />
   </div>
   <div class="form-group">
-    <label> Password </label>
+    <label> 패스워드 </label>
     <input
       type="password"
       [(ngModel)]="password"
@@ -26,5 +26,15 @@
       class="form-control"
     />
   </div>
-  <input type="submit" class="btn btn-primary" value="Submit" />
+
+  <div class="form-group">
+    <label> 패스워드 확인</label>
+    <input
+      type="password"
+      [(ngModel)]="password2"
+      name="password2"
+      class="form-control"
+    />
+  </div>
+  <input type="submit" class="btn btn-primary" value="회원가입" />
 </form>

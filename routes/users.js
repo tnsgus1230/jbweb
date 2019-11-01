@@ -55,7 +55,8 @@ router.post("/authenticate", (req, res, next) => {
     });
   });
 });
-
+//TODO profile 을 쓰는 이유를 잘 모르갯음
+//여기서 작업해서 DB 를 가져올수 있게 하는것같긴한대 . . . .
 router.get(
   "/profile",
   passport.authenticate("jwt", { session: false }),

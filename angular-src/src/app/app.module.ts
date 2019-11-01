@@ -19,6 +19,8 @@ import { FlashMessagesService } from "angular2-flash-messages";
 import { AuthGuard } from "./guards/auth.guards";
 import { JwtModule } from "@auth0/angular-jwt";
 import { CommunityComponent } from "./components/community/community.component";
+import { BoardComponent } from "./components/board/board.component";
+import { WriteboardComponent } from "./components/writeboard/writeboard.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CommunityComponent } from "./components/community/community.component";
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    CommunityComponent
+    CommunityComponent,
+    BoardComponent,
+    WriteboardComponent
   ],
   imports: [
     BrowserModule,
