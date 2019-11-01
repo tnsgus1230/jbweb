@@ -8,6 +8,7 @@ const users = require("./routes/users");
 
 const app = express();
 const port = 3000;
+
 const config = require("./config/database");
 
 mongoose.connect(config.database, { useNewUrlParser: true });
