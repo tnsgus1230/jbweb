@@ -6,7 +6,8 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from "./components/home/home.component";
 
-import {BoardComponent} from "./components/board/board.component";
+import { BoardComponent } from "./components/board/board.component";
+import { WriteboardComponent } from "./components/writeboard/writeboard.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { AuthGuard } from "./guards/auth.guards";
@@ -21,7 +22,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
-  {path: "board", component: BoardComponent}
+  { path: "board", component: BoardComponent },
+  { path: "writeboard", component: WriteboardComponent }
 ];
 
 @NgModule({
