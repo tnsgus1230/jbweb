@@ -17,19 +17,15 @@ export class BoardComponent implements OnInit {
 
   ngOnInit() {
     //TODO 이부분 잘건드려야대
-    /* this.authservice.getboradtitle().subscribe(
-      board => {
-        this.writer = board.boardurl.writer;
-        this.date = board.boardurl.date;
-        this.views = board.boards.views;
+    //ㅅㅂ ㄹ ㅁ도대채 왜안되는거야> ㅆㅣ빨 진짜 개짜쯩나녜
+    this.authservice.getboradtitle().subscribe(
+      boards => {
+        this.title = boards.addbor.title;
       },
       err => {
         console.log(err);
         return false;
       }
-    );*/
-
-    this.boardtitle = localStorage.getItem("board");
-    this.title = JSON.parse(this.boardtitle);
+    );
   }
 }

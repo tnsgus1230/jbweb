@@ -18,14 +18,26 @@ export class AuthService {
   user: User;
   title: string;
   board: Board;
+
   constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
+  prepEndpoint(ep) {
+    // 1. localhost에 포팅시
+    return "http://localhost:3000/" + ep;
+
+    // 2. Heroku 클라우드 서버에 포팅시
+    // return ep;
+  }
 
   registerUser(user): Observable<any> {
-    const registerUrl = "http://localhost:3000/users/register";
+    const registerUrl = this.prepEndpoint("users/register");
     return this.http.post(registerUrl, user, httpOptions);
   }
+  writeboard(board): Observable<any> {
+    const boardurl = this.prepEndpoint("addbor/addborcontext");
+    return this.http.post(boardurl, board, httpOptions);
+  }
   authenticateUser(login): Observable<any> {
-    const loginUrl = "http://localhost:3000/users/authenticate";
+    const loginUrl = this.prepEndpoint("users/authenticate");
     return this.http.post(loginUrl, login, httpOptions);
   }
   getProfile(): Observable<any> {
@@ -36,18 +48,16 @@ export class AuthService {
         Authorization: this.authToken
       })
     };
-    const profileUrl = "http://localhost:3000/users/profile";
+    const profileUrl = this.prepEndpoint("users/profile");
     return this.http.get(profileUrl, httpOptions1);
   }
   getboradtitle(): Observable<any> {
-    this.title = localStorage.getItem("title");
     const httpOptions2 = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        Authorization: this.title
+        "Content-Type": "application/json"
       })
     };
-    const boardurl = "http://localhost:3000/addbor/addborcontext";
+    const boardurl = this.prepEndpoint("addbor/board");
     return this.http.get(boardurl, httpOptions2);
   }
 
@@ -57,6 +67,7 @@ export class AuthService {
     this.authToken = token;
     this.user = user;
   }
+
   logout() {
     this.authToken = null;
     this.user = null;

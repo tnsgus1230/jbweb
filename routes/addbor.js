@@ -22,16 +22,25 @@ router.post("/addborcontext", (req, res, next) => {
   });
 });
 //여기서 바로 콜백으로 받으면 안되는것도 이해가 잘안되고
-/*router.get("/board", (req, res, next) => {
+/*
+router.get("/board", (req, res, next) => {
   res.json({
-    user: {
-      number: req.user.number,
-      title: req.user.title,
-      writer: req.user.writer,
-      date: req.user.date,
-      views: req.user.views,
-      context: req.user.context
+    addbor: {
+      number: req.addbors.number,
+      title: req.boards.title,
+      writer: req.addbor.writer,
+      date: req.addbor.date,
+      views: req.addbor.views,
+      context: req.addbor.context
     }
   });
-});*/
+});
+*/
+
+router.get("/board", function(req, res) {
+  Board.find(function(err, boards) {
+    if (err) return res.status(500).send({ error: "database failure" });
+    res.json(boards);
+  });
+});
 module.exports = router;

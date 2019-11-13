@@ -1,6 +1,32 @@
-<input
+<form (ngSubmit)="onWriteBoard()">
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="title"
+    title="제목을 입력해 주세요!"
+    maxlength="29"
+    id="title"
+    name="title"
+    value=""
+  />
+  <input
+    type="text"
+    [(ngModel)]="context"
+    name="context"
+    class="form-control"
+    style="height: 284px; font-family: Gulim, sans-serif; font-size: 10pt; background: darkgray;"
+    onfocus="if (parent.mwCore) {parent.mwCore.focusOnEditor();}"
+    contenteditable="true"
+  />
+  <p><br /></p>
+
+  <input type="submit" class="btn btn-primary" value="작성완료" />
+</form>
+
+<!--
+  <input
   type="text"
-  placeholder="제목을 입력해 주세요!"
+  title="제목을 입력해 주세요!"
   maxlength="29"
   id="m_txtTitle"
   name="m_txtTitle"
@@ -8,7 +34,7 @@
 />
 <body
   class="se2_inputarea"
-  style="height: 284px; font-family: Gulim, sans-serif; font-size: 10pt;"
+  style="height: 284px; font-family: Gulim, sans-serif; font-size: 10pt; background: darkgray;"
   onfocus="if (parent.mwCore) {parent.mwCore.focusOnEditor();}"
   contenteditable="true"
 >
@@ -19,5 +45,6 @@
   id="sendBtn"
   class="b do_send _c1(mwCore|sendMail) _ccr(wrt.send) _stopDefault save_mail"
 >
-  저장
+  x
 </button>
+--->
