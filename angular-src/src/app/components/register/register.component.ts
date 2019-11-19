@@ -34,7 +34,8 @@ export class RegisterComponent implements OnInit {
     //Require Fileds
     if (!this.validateService.validateRegister(user)) {
       this.flashMessage.show("모든 필드를 채워주세요", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger text-center",
+
         timeout: 3000
       });
       return false;
@@ -42,7 +43,7 @@ export class RegisterComponent implements OnInit {
     //Validate Email
     if (!this.validateService.validateEmail(user.email)) {
       this.flashMessage.show("유효한 이메일 주소를 입력하세요", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger text-center",
         timeout: 3000
       });
       return false;
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnInit {
     //비밀번호 가 다를시
     if (this.password != this.password2) {
       this.flashMessage.show("두 비밀번호가 일치하지 않습니다. ", {
-        cssClass: "alert-danger",
+        cssClass: "alert-danger text-center",
         timeout: 3000
       });
     }
@@ -61,7 +62,7 @@ export class RegisterComponent implements OnInit {
           this.flashMessage.show(
             "가입에 성공하셨습니다 정상적으로 서비스 이용이 가능합니다. ",
             {
-              cssClass: "alert-success",
+              cssClass: "alert-success text-center",
               timeout: 3000
             }
           );
