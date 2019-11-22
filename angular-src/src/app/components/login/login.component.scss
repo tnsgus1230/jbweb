@@ -1,0 +1,64 @@
+.btn {
+  font-family: "Noto Sans KR", sans-serif;
+
+  max-width: 350px;
+  height: 50px;
+  font-size: 16px;
+  -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
+  box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
+  background: #008542;
+  color: white;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: rgb(32, 31, 31) !important;
+  opacity: 0.8;
+  transition: background-color 0.7s ease, font-size 0.7s linear;
+
+  color: white;
+  transition: color 0.7s ease, font-size 0.7 linear;
+  transition: width 0.9s ease, font-size 0.9 linear;
+  transition: height 0.9s ease, font-size 0.9 linear;
+  -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
+  box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
+}
+.page-header {
+  font-family: "Noto Sans KR", sans-serif;
+}
+.form-group {
+  width: 350px;
+  color: gray;
+  //float: none;
+  margin: 0 auto;
+  //align-items: center;
+}
+.container {
+  max-width: 99999px;
+  margin-top: 0px;
+  background: sandybrown;
+}
+.contactus {
+  background: rgb(0, 0, 0);
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+  height: 85px;
+  width: 490px;
+}
+.already {
+  font-family: monospace;
+  font-weight: bold;
+}
+.alink:hover {
+  color: green;
+}
+.ppap {
+  background: rgb(255, 255, 255);
+  margin-top: 200px;
+  display: inline-block; //마진-탑으로 생긴 공백 채우기
+  max-width: 2000px;
+  margin-bottom: 89px;
+}

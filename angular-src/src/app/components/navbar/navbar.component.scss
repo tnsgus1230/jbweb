@@ -2,15 +2,14 @@
   //드랍다운 자동펼치기
   display: block;
   opacity: 0.8;
-  height: 19px;
-  padding: 0 9px;
+  //height: 19px; 높이고정
+  padding: 0 0px;
   line-height: 7px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
   font-size: 13px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  //background-color: rgba(255, 255, 255, 0.1);
   position: relative;
+  margin-top: 5px;
 }
 .img-responsive {
   //적응형 이미지
@@ -29,18 +28,28 @@
   transition: color 0.3s ease, font-size 0.3s linear;
 }
 //!important 는 기존 부트스트랩에 정의된 css보다 우선순위로 적용시키는 것
-.nav {
-  background-color: rgba(255, 255, 255, 0.3);
-}
+
 .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(106, 122, 209, 0) !important;
+  color: rgb(27, 27, 199) !important;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: bold;
+}
+.dropdown-item {
+  margin-top: 6px;
 }
 .nav-item {
-  font-size: 19px;
+  font-size: 20px;
   margin-left: 45px;
   margin-right: 45px;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .img {
-  margin-top: -100px;
+  margin-top: -11px;
+  height: 80px;
+}
+.maindiv {
+  background: rgb(31, 32, 31);
+  max-height: 93px;
 }

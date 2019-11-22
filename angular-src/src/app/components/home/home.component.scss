@@ -1,4 +1,5 @@
 .row {
+  //중간 상단  div
   width: 1500px;
   height: 267px;
   margin-left: 125px;
@@ -84,25 +85,76 @@
   font-weight: bolder;
 }
 .card {
-  height: 175px;
+  height: 26 5px;
   right: 0;
   position: absolute;
   margin-top: -155px;
   margin-right: 525px;
 }
 .col-md-8 {
-  margin-left: 300px !important;
-  margin-top: -105px;
+  margin-left: 420px !important;
+  margin-top: -205px;
 }
 .bd-example {
   margin-top: 250px;
   margin-left: 750px;
 }
-.bground {
-  background-color: black;
-  margin-top: 150px;
-  width: 2000px;
-  height: 100px;
-  margin-left: -1000px;
-  opacity: 0.7;
+
+.w-100 {
+  height: 220px;
+}
+.w-100:hover {
+  -webkit-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
+  box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
+  transition: box-shadow 0.5;
+
+  -moz-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+  transition: box-shadow 0.5s;
+  -moz-box-shadow-delay: 0.5s;
+  -webkit-box-shadow-delay: 0.5s;
+}
+
+.card-img {
+  width: -1000px;
+  height: 250px;
+  margin-left: -120px;
+}
+.col-md-4 {
+  margin-top: 8.5px;
+  margin-left: 6.5px;
+}
+
+.card:hover {
+  -webkit-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
+  box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
+  transition: box-shadow 0.5;
+
+  -moz-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+  transition: box-shadow 0.5s;
+  -moz-box-shadow-delay: 0.5s;
+  -webkit-box-shadow-delay: 0.5s;
+}
+.carousel {
+  margin-left: -370px;
+  width: 1000px;
+}
+.d-block {
+  height: 600px;
+  margin-top: 110px;
+}
+
+.abcd {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-top: 9px;
+}
+.subtitle {
+  margin-top: 140px;
+}
+
+.carousel-caption {
+  height: 570px;
 }
