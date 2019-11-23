@@ -18,6 +18,7 @@ export class AuthService {
   user: User;
   title: string;
   board: Board;
+  items: string[];
 
   constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
   prepEndpoint(ep) {
@@ -75,5 +76,11 @@ export class AuthService {
   }
   loggedIn() {
     return !this.jwtHelper.isTokenExpired(this.authToken);
+  }
+
+  getBoard() {
+    const bbord = this.prepEndpoint("addbor/board");
+
+    return this.http.get(bbord, httpOptions);
   }
 }

@@ -9,7 +9,7 @@ router.post("/addborcontext", (req, res, next) => {
     number: req.body.number,
     title: req.body.title,
     writer: req.body.writer,
-    date: req.body.date,
+    $date: { date: new Date() },
     views: req.body.views,
     context: req.body.context
   });
@@ -23,7 +23,7 @@ router.post("/addborcontext", (req, res, next) => {
 });
 //여기서 바로 콜백으로 받으면 안되는것도 이해가 잘안되고
 /*
-router.get("/board", (req, res, next) => {
+router.get("/board", function(req, res) {
   res.json({
     addbor: {
       number: req.addbors.number,
@@ -40,7 +40,9 @@ router.get("/board", (req, res, next) => {
 router.get("/board", function(req, res) {
   Board.find(function(err, boards) {
     if (err) return res.status(500).send({ error: "database failure" });
+    console.log(boards);
     res.json(boards);
   });
 });
+
 module.exports = router;
