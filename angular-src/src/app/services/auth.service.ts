@@ -18,14 +18,14 @@ export class AuthService {
   user: User;
   title: string;
   board: Board;
-  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
 
   registerUser(user): Observable<any> {
-    const registerUrl = "http://localhost:3000/users/register";
+    const registerUrl = this.prependpoint("/users/register");
     return this.http.post(registerUrl, user, httpOptions);
   }
   authenticateUser(login): Observable<any> {
-    const loginUrl = "http://localhost:3000/users/authenticate";
+    const loginUrl = this.prependpoint("/users/authenticate");
     return this.http.post(loginUrl, login, httpOptions);
   }
   getProfile(): Observable<any> {
@@ -36,19 +36,14 @@ export class AuthService {
         Authorization: this.authToken
       })
     };
-    const profileUrl = "http://localhost:3000/users/profile";
+    const profileUrl = "/users/profile";
     return this.http.get(profileUrl, httpOptions1);
   }
   getboradtitle(): Observable<any> {
     this.title = localStorage.getItem("title");
-    const httpOptions2 = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        Authorization: this.title
-      })
-    };
-    const boardurl = "http://localhost:3000/addbor/addborcontext";
-    return this.http.get(boardurl, httpOptions2);
+
+    const boardurl = this.prependpoint("/addbor/addborcontext");
+    return this.http.get(boardurl, httpOptions);
   }
 
   storeUserData(token, user) {
@@ -64,5 +59,9 @@ export class AuthService {
   }
   loggedIn() {
     return !this.jwtHelper.isTokenExpired(this.authToken);
+  }
+  prependpoint(ep) {
+    return "http://localhost:3000/" + ep
+    //return ep
   }
 }

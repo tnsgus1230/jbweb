@@ -21,6 +21,13 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { CommunityComponent } from "./components/community/community.component";
 import { BoardComponent } from "./components/board/board.component";
 import { WriteboardComponent } from "./components/writeboard/writeboard.component";
+import { PayshopComponent } from './components/payshop/payshop.component';
+import { PayinformationComponent } from './components/payinformation/payinformation.component';
+import { PaysuccessComponent } from './components/paysuccess/paysuccess.component';
+import { PayfailComponent } from './components/payfail/payfail.component';
+import { RefundinfoComponent } from './components/refundinfo/refundinfo.component';
+import { PayinfoComponent } from './components/payinfo/payinfo.component';
+import { RefundsuccessComponent } from './components/refundsuccess/refundsuccess.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,14 @@ import { WriteboardComponent } from "./components/writeboard/writeboard.componen
     ProfileComponent,
     CommunityComponent,
     BoardComponent,
-    WriteboardComponent
+    WriteboardComponent,
+    PayshopComponent,
+    PayinformationComponent,
+    PaysuccessComponent,
+    PayfailComponent,
+    RefundinfoComponent,
+    PayinfoComponent,
+    RefundsuccessComponent
   ],
   imports: [
     BrowserModule,
