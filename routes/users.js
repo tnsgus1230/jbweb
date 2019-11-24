@@ -13,11 +13,27 @@ router.post("/register", (req, res, next) => {
     username: req.body.username,
     password: req.body.password
   });
-  User.addUser(newUser, (err, user) => {
-    if (err) {
-      res.json({ success: false, msg: "Failed to register user" });
+  User.getUserByUsername(newUser.username, (err, user) => {
+    if (err) throw err;
+    if (user) {
+      return res.json({
+        success: false,
+        msg: "동일한 아이디가 존재합니다. 사용자 등록 실패."
+      });
     } else {
-      res.json({ success: true, msg: "User" });
+      User.addUser(newUser, (err, user) => {
+        if (err) {
+          res.json({ success: false, msg: "사용자 등록 실패" });
+        } else {
+          User.addUser(newUser, (err, user) => {
+            if (err) {
+              res.json({ success: false, msg: "Failed to register user" });
+            } else {
+              res.json({ success: true, msg: "User" });
+            }
+          });
+        }
+      });
     }
   });
 });
@@ -35,9 +51,9 @@ router.post("/authenticate", (req, res, next) => {
     User.comparePassword(password, user.password, (err, isMatch) => {
       if (err) throw err;
       if (isMatch) {
-        const token = jwt.sign({ data: user }, config.secret, {
+        const token = (jwt.sig = jwt.sign({ data: user }, config.secret, {
           expiresIn: 604800 // 1 week
-        });
+        }));
 
         res.json({
           success: true,

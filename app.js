@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const users = require("./routes/users");
 const addbor = require("./routes/addbor");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const config = require("./config/database");
 
@@ -29,6 +29,11 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 app.use("/addbor", addbor);
+<<<<<<< HEAD
+=======
+
+app.use(express.static(path.join(__dirname, "Public")));
+>>>>>>> 81ae9c92b376471d959a05c1db3a745929b8e63d
 
 app.use(express.static(path.join(__dirname, "public")));
 

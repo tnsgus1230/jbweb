@@ -69,7 +69,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(["/login"]);
         }
       } else {
-        this.flashMessage.show("가입에 실패했습니다.", {
+        this.flashMessage.show("동일한 아이디가 존재합니다.", {
           cssClass: "alert-danger",
           timeout: 3000
         });
