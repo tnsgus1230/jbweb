@@ -18,15 +18,9 @@ export class AuthService {
   user: User;
   title: string;
   board: Board;
-<<<<<<< HEAD
-  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
-
-  registerUser(user): Observable<any> {
-    const registerUrl = this.prependpoint("/users/register");
-=======
   items: string[];
 
-  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
   prepEndpoint(ep) {
     // 1. localhost에 포팅시
     return "http://localhost:3000/" + ep;
@@ -37,7 +31,6 @@ export class AuthService {
 
   registerUser(user): Observable<any> {
     const registerUrl = this.prepEndpoint("users/register");
->>>>>>> 81ae9c92b376471d959a05c1db3a745929b8e63d
     return this.http.post(registerUrl, user, httpOptions);
   }
   writeboard(board): Observable<any> {
@@ -45,11 +38,7 @@ export class AuthService {
     return this.http.post(boardurl, board, httpOptions);
   }
   authenticateUser(login): Observable<any> {
-<<<<<<< HEAD
-    const loginUrl = this.prependpoint("/users/authenticate");
-=======
     const loginUrl = this.prepEndpoint("users/authenticate");
->>>>>>> 81ae9c92b376471d959a05c1db3a745929b8e63d
     return this.http.post(loginUrl, login, httpOptions);
   }
   getProfile(): Observable<any> {
@@ -60,16 +49,6 @@ export class AuthService {
         Authorization: this.authToken
       })
     };
-<<<<<<< HEAD
-    const profileUrl = "/users/profile";
-    return this.http.get(profileUrl, httpOptions1);
-  }
-  getboradtitle(): Observable<any> {
-    this.title = localStorage.getItem("title");
-
-    const boardurl = this.prependpoint("/addbor/addborcontext");
-    return this.http.get(boardurl, httpOptions);
-=======
     const profileUrl = this.prepEndpoint("users/profile");
     return this.http.get(profileUrl, httpOptions1);
   }
@@ -81,7 +60,6 @@ export class AuthService {
     };
     const boardurl = this.prepEndpoint("addbor/board");
     return this.http.get(boardurl, httpOptions2);
->>>>>>> 81ae9c92b376471d959a05c1db3a745929b8e63d
   }
 
   storeUserData(token, user) {
@@ -99,16 +77,10 @@ export class AuthService {
   loggedIn() {
     return !this.jwtHelper.isTokenExpired(this.authToken);
   }
-<<<<<<< HEAD
-  prependpoint(ep) {
-    return "http://localhost:3000/" + ep
-    //return ep
-=======
 
   getBoard() {
     const bbord = this.prepEndpoint("addbor/board");
 
     return this.http.get(bbord, httpOptions);
->>>>>>> 81ae9c92b376471d959a05c1db3a745929b8e63d
   }
 }

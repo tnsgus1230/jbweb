@@ -29,11 +29,7 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 app.use("/addbor", addbor);
-<<<<<<< HEAD
-=======
 
-app.use(express.static(path.join(__dirname, "Public")));
->>>>>>> 81ae9c92b376471d959a05c1db3a745929b8e63d
 
 app.use(express.static(path.join(__dirname, "public")));
 

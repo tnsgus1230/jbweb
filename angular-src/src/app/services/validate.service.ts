@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ValidateService {
-  constructor() {}
+  constructor() { }
 
   validateRegister(user) {
     if (
@@ -10,6 +10,20 @@ export class ValidateService {
       user.email == undefined ||
       user.username == undefined ||
       user.password == undefined
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  validateProceed(user, card) {
+    if (
+      user.name == undefined ||
+      user.email == undefined ||
+      user.username == undefined ||
+      card.cardnumber == undefined ||
+      card.expire == undefined ||
+      card.secretnum == undefined
     ) {
       return false;
     } else {
