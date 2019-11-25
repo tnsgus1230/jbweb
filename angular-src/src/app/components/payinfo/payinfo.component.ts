@@ -56,4 +56,6 @@ export class PayinfoComponent implements OnInit {
       return false;
     }
   }
+
+
 }
