@@ -29,6 +29,12 @@
 }
 //!important 는 기존 부트스트랩에 정의된 css보다 우선순위로 적용시키는 것
 
+.nav-link {
+  color: white;
+  opacity: 0.8;
+  transition: color 0.3s ease, font-size 0.3s linear;
+}
+
 .dropdown-item:hover {
   background-color: rgba(106, 122, 209, 0) !important;
   color: rgb(27, 27, 199) !important;
