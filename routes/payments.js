@@ -22,4 +22,15 @@ router.post("/paysave", (req, res, next) => {
 
 })
 
+router.get("/orderdata",
+    passport.authenticate("jwt", { session: false }), (req, res, next) => {
+        res.json({
+            user: {
+                name: req.user.name,
+                username: req.user.username,
+                email: req.user.email
+            }
+        })
+    })
+
 module.exports = router;

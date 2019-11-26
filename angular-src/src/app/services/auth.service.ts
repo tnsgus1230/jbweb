@@ -37,6 +37,18 @@ export class AuthService {
     return this.http.post(paysaveUrl, paysave, httpOptions)
   }
 
+  getOrderdata(): Observable<any> {
+    this.authToken = localStorage.getItem("id_token");
+    const profileUrl = this.prepEndpoint("payments/orderdata");
+    const httpOptions1 = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: this.authToken
+      })
+    };
+    return this.http.get(profileUrl, httpOptions1);
+  }
+
   //
 
   registerUser(user): Observable<any> {
@@ -53,13 +65,13 @@ export class AuthService {
   }
   getProfile(): Observable<any> {
     this.authToken = localStorage.getItem("id_token");
+    const profileUrl = this.prepEndpoint("users/profile");
     const httpOptions1 = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
         Authorization: this.authToken
       })
     };
-    const profileUrl = this.prepEndpoint("users/profile");
     return this.http.get(profileUrl, httpOptions1);
   }
   getboradtitle(): Observable<any> {
