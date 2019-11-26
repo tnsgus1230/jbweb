@@ -12,6 +12,11 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { CommunityComponent } from "./components/community/community.component";
 import { AuthGuard } from "./guards/auth.guards";
+import { PayshopComponent } from './components/payshop/payshop.component';
+import { PayinfoComponent } from './components/payinfo/payinfo.component';
+import { PaysuccessComponent } from './components/paysuccess/paysuccess.component';
+import { RefundinfoComponent } from './components/refundinfo/refundinfo.component';
+import { RefundsuccessComponent } from './components/refundsuccess/refundsuccess.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "navbar", component: NavbarComponent },
@@ -24,11 +29,16 @@ const routes: Routes = [
   },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   { path: "board", component: BoardComponent },
-  { path: "writeboard", component: WriteboardComponent }
+  { path: "writeboard", component: WriteboardComponent },
+  { path: "payshop", component: PayshopComponent },
+  { path: "payinfo", component: PayinfoComponent },
+  { path: "paysuccess", component: PaysuccessComponent },
+  { path: "refundinfo", component: RefundinfoComponent },
+  { path: "refundsuccess", component: RefundsuccessComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

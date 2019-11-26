@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../models/User";
 import { Board } from "../models/Board";
+import { Paylog } from "../models/Paylog"
 import { JwtHelperService } from "@auth0/angular-jwt";
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,36 +19,68 @@ export class AuthService {
   user: User;
   title: string;
   board: Board;
-  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
+  items: string[];
 
-  registerUser(user): Observable<any> {
-    const registerUrl = "http://localhost:3000/users/register";
-    return this.http.post(registerUrl, user, httpOptions);
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
+  prepEndpoint(ep) {
+    // 1. localhost에 포팅시
+    return "http://localhost:3000/" + ep;
+
+    // 2. Heroku 클라우드 서버에 포팅시
+    // return ep;
   }
-  authenticateUser(login): Observable<any> {
-    const loginUrl = "http://localhost:3000/users/authenticate";
-    return this.http.post(loginUrl, login, httpOptions);
+
+  //payment methods
+  storeOrderData(paysave): Observable<any> {
+    const paysaveUrl = this.prepEndpoint("payments/paysave")
+    console.log(this.http.post(paysaveUrl, paysave, httpOptions))
+    return this.http.post(paysaveUrl, paysave, httpOptions)
   }
-  getProfile(): Observable<any> {
+
+  getOrderdata(): Observable<any> {
     this.authToken = localStorage.getItem("id_token");
+    const profileUrl = this.prepEndpoint("payments/orderdata");
     const httpOptions1 = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
         Authorization: this.authToken
       })
     };
-    const profileUrl = "http://localhost:3000/users/profile";
+    return this.http.get(profileUrl, httpOptions1);
+  }
+
+  //
+
+  registerUser(user): Observable<any> {
+    const registerUrl = this.prepEndpoint("users/register");
+    return this.http.post(registerUrl, user, httpOptions);
+  }
+  writeboard(board): Observable<any> {
+    const boardurl = this.prepEndpoint("addbor/addborcontext");
+    return this.http.post(boardurl, board, httpOptions);
+  }
+  authenticateUser(login): Observable<any> {
+    const loginUrl = this.prepEndpoint("users/authenticate");
+    return this.http.post(loginUrl, login, httpOptions);
+  }
+  getProfile(): Observable<any> {
+    this.authToken = localStorage.getItem("id_token");
+    const profileUrl = this.prepEndpoint("users/profile");
+    const httpOptions1 = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: this.authToken
+      })
+    };
     return this.http.get(profileUrl, httpOptions1);
   }
   getboradtitle(): Observable<any> {
-    this.title = localStorage.getItem("title");
     const httpOptions2 = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        Authorization: this.title
+        "Content-Type": "application/json"
       })
     };
-    const boardurl = "http://localhost:3000/addbor/addborcontext";
+    const boardurl = this.prepEndpoint("addbor/board");
     return this.http.get(boardurl, httpOptions2);
   }
 
@@ -57,6 +90,7 @@ export class AuthService {
     this.authToken = token;
     this.user = user;
   }
+
   logout() {
     this.authToken = null;
     this.user = null;
@@ -64,5 +98,11 @@ export class AuthService {
   }
   loggedIn() {
     return !this.jwtHelper.isTokenExpired(this.authToken);
+  }
+
+  getBoard() {
+    const bbord = this.prepEndpoint("addbor/board");
+
+    return this.http.get(bbord, httpOptions);
   }
 }
