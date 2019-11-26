@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../models/User";
 import { Board } from "../models/Board";
+import { Paylog } from "../models/Paylog"
 import { JwtHelperService } from "@auth0/angular-jwt";
 const httpOptions = {
   headers: new HttpHeaders({
@@ -28,6 +29,15 @@ export class AuthService {
     // 2. Heroku 클라우드 서버에 포팅시
     // return ep;
   }
+
+  //payment methods
+  storeOrderData(paysave): Observable<any> {
+    const paysaveUrl = this.prepEndpoint("payments/paysave")
+    console.log(this.http.post(paysaveUrl, paysave, httpOptions))
+    return this.http.post(paysaveUrl, paysave, httpOptions)
+  }
+
+  //
 
   registerUser(user): Observable<any> {
     const registerUrl = this.prepEndpoint("users/register");

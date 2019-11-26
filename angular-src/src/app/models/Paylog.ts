@@ -1,4 +1,4 @@
-export class User {
+export class Paylog {
     name: string;
     email: string;
     username: string;
