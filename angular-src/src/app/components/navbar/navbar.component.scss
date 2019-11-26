@@ -11,11 +11,11 @@
   position: relative;
   margin-top: 5px;
 }
-.img-responsive {
-  //적응형 이미지
-  max-width: 100%;
-  height: auto;
-}
+//.img-responsive {
+//적응형 이미지
+//max-width: 100%;
+//height: auto;
+//}
 
 //.nav-item {
 //메뉴바
@@ -39,15 +39,17 @@
   margin-top: 6px;
 }
 .nav-item {
-  font-size: 20px;
-  margin-left: 45px;
-  margin-right: 45px;
+  position: relative;
+  margin-top: -11px;
+  font-size: 16px;
+  margin-left: 45px; //메뉴 창 축소시 조절부분
+  margin-right: 35px; //메뉴 창 축소시 조절부분
   font-family: "Noto Sans TC", sans-serif;
 }
 
 .img {
-  margin-top: -11px;
-  height: 80px;
+  margin-top: -7px;
+  height: 60px;
 }
 .maindiv {
   background: rgb(31, 32, 31);

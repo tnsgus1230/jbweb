@@ -2,7 +2,7 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 .form-group {
-  width: 550px;
+  width: 385px;
   color: gray;
   margin: 0 auto; //가운데 정렬
 }
@@ -13,7 +13,7 @@
   //margin-left: -40px;
 
   height: 80px;
-  max-width: 650px;
+  max-width: 550px;
   font-size: 25px;
   -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
@@ -40,7 +40,7 @@
   margin: 0 auto;
   max-width: 100%;
 
-  height: 1000px;
+  //height: 1000px; 높이를 설정하면 페이지축소시에 고정된 높이로인해 공백이발생함
   background: rgba(233, 230, 212, 0.233);
 }
 .plusdata {
