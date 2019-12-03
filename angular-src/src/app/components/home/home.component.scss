@@ -96,9 +96,11 @@
   //after하면 아래로 내려가고 배너div를 넘어감
   //margin-left: 485px;
   //margin-top: -170px;
+  background: rgba(207, 205, 205, 0.678);
   height: 555px;
   margin-top: 150px;
   margin: auto;
+  transition: 0.5s;
 }
 .col-md-8 {
   margin: auto;
@@ -130,6 +132,7 @@
 .col-md-4 {
   max-height: 9999px;
   max-width: 688px;
+  background: rgba(65, 24, 24, 0);
 }
 
 .card:hover {
@@ -185,7 +188,8 @@
 }
 
 .container {
-  background-color: rgb(68, 55, 80);
+  //background-color: rgb(68, 55, 80);
+
   width: 100%;
   max-width: 9999px;
   height: 100%; //높이를 px고정된 수치가 아닌 %로 지정하여 배너공백 해결
@@ -193,18 +197,20 @@
 }
 .vava2 {
   margin: 0 auto;
+  transition: 0.7s;
 }
 .card-body {
 }
 
 .card-text {
+  font-family: "Courier New", Courier, monospace;
 }
 
 .card-img:hover {
   -webkit-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
   box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
-  transition: box-shadow 0.5;
+  transition: box-shadow 0.5s;
 
   -moz-transition-delay: 0.5s;
   transition-delay: 0.5s;
@@ -215,4 +221,25 @@
 .card-img {
   margin-top: 10px;
   transition: 0.5s;
+}
+.bgimg2 {
+  background-image: url(../../../assets/home.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.bgimg {
+  background-image: url(../../../assets/bg.JPG);
+  background-size: 100%;
+}
+
+.col-md-6 {
+  background: rgba(204, 201, 185, 0.247) !important;
+}
+.page-header {
+  font-size: 15px;
 }

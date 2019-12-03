@@ -10,6 +10,7 @@
   //background-color: rgba(255, 255, 255, 0.1);
   position: relative;
   margin-top: 5px;
+  background: rgba(255, 255, 255, 0.13);
 }
 //.img-responsive {
 //적응형 이미지
@@ -37,13 +38,18 @@
 
 .dropdown-item:hover {
   background-color: rgba(106, 122, 209, 0) !important;
-  color: rgb(27, 27, 199) !important;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.986) !important;
+  font-size: 14px;
+  transition: 0.5s;
 }
 .dropdown-item {
+  font-family: "Noto Sans TC", sans-serif;
   margin-top: 6px;
+  margin-bottom: 6px;
+  transition: 0.5s;
+  color: greenyellow;
 }
+
 .nav-item {
   //position: relative;
   margin-top: -11px;
@@ -56,6 +62,12 @@
 .img {
   margin-top: -7px;
   height: 60px;
+  transition: 0.6s;
+}
+
+.img:hover {
+  height: 66px;
+  transition: 0.6s;
 }
 .maindiv {
   background: rgb(31, 32, 31);
