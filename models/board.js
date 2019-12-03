@@ -28,7 +28,7 @@ Board1.gettext = function(context, callback) {
   Board1.findById(id, callback);
 };
 
-Board1.getUserByUsername = function(username, callback) {
+Board1.getUserByUsername = function(username, call  back) {
   const query = { username: username };
   Board1.findOne(query, callback);
 };

@@ -51,14 +51,13 @@ export class WriteboardComponent implements OnInit {
       });
       return false;
     }
-
     this.authService.writeboard(board).subscribe(data => {
       if (data.success) {
         this.flashMessage.show("글쓰기 완료", {
           cssClass: "alert-success",
           timeout: 3000
         });
-        this.router.navigate["/board"];
+        this.router.navigate(["/board"]);
       }
     });
   }

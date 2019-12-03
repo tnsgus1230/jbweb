@@ -3,13 +3,18 @@ const router = express.Router();
 
 const Board = require("../models/board");
 const config = require("../config/database");
-
+const moment = require("../node_modules/moment");
 router.post("/addborcontext", (req, res, next) => {
+  //let image = document.getElementById("fileToUpload").files[0];
+  moment.tz.setDefalt("Asia/Seoul");
+  let date = moment().format("YYYY-MM-DD");
+
+  //TODO 이부분해결할꺼야
   let newBoard = new Board({
     number: req.body.number,
     title: req.body.title,
     writer: req.body.writer,
-    $date: { date: new Date() },
+    $date: { date: date() },
     views: req.body.views,
     context: req.body.context
   });
@@ -21,6 +26,7 @@ router.post("/addborcontext", (req, res, next) => {
     }
   });
 });
+
 //여기서 바로 콜백으로 받으면 안되는것도 이해가 잘안되고
 /*
 router.get("/board", function(req, res) {
