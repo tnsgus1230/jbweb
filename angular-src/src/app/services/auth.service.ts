@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../models/User";
 import { Board } from "../models/Board";
+import { Paylog } from "../models/Paylog"
 import { JwtHelperService } from "@auth0/angular-jwt";
 const httpOptions = {
   headers: new HttpHeaders({
@@ -29,6 +30,27 @@ export class AuthService {
     // return ep;
   }
 
+  //payment methods
+  storeOrderData(paysave): Observable<any> {
+    const paysaveUrl = this.prepEndpoint("payments/paysave")
+    console.log(this.http.post(paysaveUrl, paysave, httpOptions))
+    return this.http.post(paysaveUrl, paysave, httpOptions)
+  }
+
+  getOrderdata(): Observable<any> {
+    this.authToken = localStorage.getItem("id_token");
+    const profileUrl = this.prepEndpoint("payments/orderdata");
+    const httpOptions1 = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: this.authToken
+      })
+    };
+    return this.http.get(profileUrl, httpOptions1);
+  }
+
+  //
+
   registerUser(user): Observable<any> {
     const registerUrl = this.prepEndpoint("users/register");
     return this.http.post(registerUrl, user, httpOptions);
@@ -43,13 +65,13 @@ export class AuthService {
   }
   getProfile(): Observable<any> {
     this.authToken = localStorage.getItem("id_token");
+    const profileUrl = this.prepEndpoint("users/profile");
     const httpOptions1 = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
         Authorization: this.authToken
       })
     };
-    const profileUrl = this.prepEndpoint("users/profile");
     return this.http.get(profileUrl, httpOptions1);
   }
   getboradtitle(): Observable<any> {

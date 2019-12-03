@@ -6,6 +6,7 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const users = require("./routes/users");
 const addbor = require("./routes/addbor");
+const payments = require("./routes/payments");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -29,7 +30,7 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 app.use("/addbor", addbor);
-
+app.use("/payments", payments);
 
 
 app.use(express.static(path.join(__dirname, "public")));

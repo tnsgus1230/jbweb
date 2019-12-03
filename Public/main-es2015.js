@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"table table-striped table-bordered table-hover\">\r\n  <thead>\r\n    <tr>\r\n      <th>번호</th>\r\n      <th>제목</th>\r\n      <th>작성자</th>\r\n      <th>날짜</th>\r\n      <th>조회수</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>:{{ number }}</td>\r\n      <td>:{{ title }}</td>\r\n      <td>:{{ writer }}</td>\r\n      <td>2016.12.02</td>\r\n      <td>2</td>\r\n    </tr>\r\n    <tr>\r\n      <td>164</td>\r\n      <td>이제 곧 뷰투수투렙 3 가 나온다며?</td>\r\n      <td>운영자</td>\r\n      <td>2016.12.01</td>\r\n      <td>2</td>\r\n    </tr>\r\n    <tr>\r\n      <td>163</td>\r\n      <td>이제 곧 뷰투수투렙 2 가 나온다며?</td>\r\n      <td>운영자</td>\r\n      <td>2016.12.01</td>\r\n      <td>2</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<a\r\n  href=\"writeboard\"\r\n  style=\"\r\ncolor: black;\r\nfont-size: 2.0em;\r\nfont-weight: bold;\r\n\"\r\n>\r\n  글쓰기\r\n</a>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"table table-striped table-bordered table-hover\">\r\n  <thead>\r\n    <tr>\r\n      <th>제목</th>\r\n      <th>작성자</th>\r\n      <th>날짜</th>\r\n      <th>내용</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let boards of boards\">\r\n      <td\r\n        class=\"PM_CL_btnServiceMore an_btn_more an_fold\"\r\n        data-toggle=\"collapse\"\r\n        href=\"#multiCollapseExample1\"\r\n        role=\"button\"\r\n        aria-expanded=\"true\"\r\n        aria-controls=\"multiCollapseExample1\"\r\n      >\r\n        {{ boards.title }}\r\n      </td>\r\n      <td\r\n        class=\"PM_CL_btnServiceMore an_btn_more an_fold\"\r\n        data-toggle=\"collapse\"\r\n        href=\"#multiCollapseExample1\"\r\n        role=\"button\"\r\n        aria-expanded=\"true\"\r\n        aria-controls=\"multiCollapseExample1\"\r\n      >\r\n        {{ boards.writer }}\r\n      </td>\r\n\r\n      <td\r\n        class=\"PM_CL_btnServiceMore an_btn_more an_fold\"\r\n        data-toggle=\"collapse\"\r\n        href=\"#multiCollapseExample1\"\r\n        role=\"button\"\r\n        aria-expanded=\"true\"\r\n        aria-controls=\"multiCollapseExample1\"\r\n      >\r\n        {{ boards.date }}\r\n      </td>\r\n\r\n      <div class=\"row\">\r\n        <div class=\"col\">\r\n          <div class=\"collapse multi-collapse\" id=\"multiCollapseExample1\">\r\n            <div class=\"card card-body\">\r\n              {{ boards.context }}\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<a\r\n  href=\"writeboard\"\r\n  style=\"\r\n  color: black;\r\n  font-size: 2.0em;\r\n  font-weight: bold;\r\n  \"\r\n>\r\n  글쓰기\r\n</a>\r\n");
 
 /***/ }),
 
@@ -110,7 +110,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"maindiv\">\r\n  &nbsp;\r\n  <ul class=\"nav justify-content-center\">\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link  text-white\" href=\"/\">메뉴1 </a>\r\n    </li>\r\n\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link text-white\" href=\"/\">메뉴2</a>\r\n    </li>\r\n\r\n    <li class=\"nav-item dropdown\">\r\n      <a\r\n        class=\"nav-link dropdown-toggle text-white\"\r\n        role=\"button\"\r\n        aria-expanded=\"false\"\r\n        aria-haspopup=\"true\"\r\n        href=\"#\"\r\n        data-toggle=\"dropdown\"\r\n        >게시판</a\r\n      >\r\n      <div\r\n        class=\"dropdown-menu\"\r\n        style=\"left: 0px; top: 1px; position: absolute; transform: translate3d(-36px, 34px, 0px);\"\r\n        x-placement=\"bottom-start\"\r\n      >\r\n        <a class=\"dropdown-item text-success\" routerLink=\"/community\"\r\n          >자유게시판</a\r\n        >\r\n      </div>\r\n    </li>\r\n\r\n    &nbsp;&nbsp;&nbsp;&nbsp;\r\n\r\n    <img\r\n      src=\"../../../assets//Minecraft-Logo-500x281.jpg\"\r\n      class=\"img\"\r\n      onclick=\"location.href='/'\"\r\n    />\r\n\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link  text-white\" href=\"/\">&nbsp;&nbsp;&nbsp;메뉴4</a>\r\n    </li>\r\n\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link text-white\" href=\"/\">메뉴5</a>\r\n    </li>\r\n\r\n    <li class=\"nav-item dropdown\">\r\n      <a\r\n        class=\"nav-link dropdown-toggle text-white\"\r\n        role=\"button\"\r\n        aria-expanded=\"false\"\r\n        aria-haspopup=\"true\"\r\n        href=\"#\"\r\n        data-toggle=\"dropdown\"\r\n        >계정메뉴</a\r\n      >\r\n      <div\r\n        class=\"dropdown-menu\"\r\n        style=\"left: 0px; top: 1px; position: absolute; transform: translate3d(-27px, 34px, 0px);\"\r\n        x-placement=\"bottom-start\"\r\n      >\r\n        <a class=\"dropdown-item text-success\" routerLink=\"/register\"\r\n          >회원가입</a\r\n        >\r\n        &nbsp;\r\n        <a class=\"dropdown-item text-success\" routerLink=\"/login\">로그인</a>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n  &nbsp;\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"maindiv\">\r\n  &nbsp;\r\n  <ul class=\"nav justify-content-center\">\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link  text-white\" href=\"/\">메뉴1 </a>\r\n    </li>\r\n\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link text-white\" href=\"/\">메뉴2</a>\r\n    </li>\r\n\r\n    <li class=\"nav-item dropdown\">\r\n      <a class=\"nav-link dropdown-toggle text-white\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" href=\"#\"\r\n        data-toggle=\"dropdown\">게시판</a>\r\n      <div class=\"dropdown-menu\"\r\n        style=\"left: 0px; top: 1px; position: absolute; transform: translate3d(-36px, 34px, 0px);\"\r\n        x-placement=\"bottom-start\">\r\n        <a class=\"dropdown-item text-success\" routerLink=\"/community\">자유게시판</a>\r\n      </div>\r\n    </li>\r\n\r\n    &nbsp;&nbsp;&nbsp;&nbsp;\r\n\r\n    <img src=\"../../../assets//Minecraft-Logo-500x281.jpg\" class=\"img\" onclick=\"location.href='/'\" />\r\n\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link  text-white\" href=\"/payshop\">&nbsp;&nbsp;&nbsp;Payshop</a>\r\n    </li>\r\n\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link text-white\" href=\"/\">메뉴5</a>\r\n    </li>\r\n\r\n    <li class=\"nav-item dropdown\">\r\n      <a class=\"nav-link dropdown-toggle text-white\" role=\"button\" aria-expanded=\"false\" aria-haspopup=\"true\" href=\"#\"\r\n        data-toggle=\"dropdown\">계정메뉴</a>\r\n      <div class=\"dropdown-menu\"\r\n        style=\"left: 0px; top: 1px; position: absolute; transform: translate3d(-27px, 34px, 0px);\"\r\n        x-placement=\"bottom-start\">\r\n        <a class=\"dropdown-item text-success\" routerLink=\"/register\">회원가입</a>\r\n        &nbsp;\r\n        <a class=\"dropdown-item text-success\" routerLink=\"/login\">로그인</a>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n  &nbsp;\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/payinfo/payinfo.component.html":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/payinfo/payinfo.component.html ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form (ngSubmit)=\"onProceedSubmit()\">\n    <div class=\"form-group text-left\">\n        <label class=\"left\"> 이름 </label>\n        <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" placeholder=\"name\" />\n\n    </div>\n    <div class=\"form-group text-left\">\n        <label class=\"left\"> 마크닉네임(서버에 접속할 아이디) </label>\n        <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" placeholder=\"nickname\" />\n    </div>\n\n    <div class=\"form-group text-left\">\n        <label class=\"left\"> 이메일 </label>\n        <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" placeholder=\"email\" />\n    </div>\n\n\n\n    &nbsp;\n\n    <div class=\"form-group text-left\">\n        <label class=\"left\"> 카드번호 </label>\n        <input type=\"text\" [(ngModel)]=\"cardnumber\" name=\"cardnumber\" class=\"form-control\" placeholder=\"card-number\" />\n\n    </div>\n    <div class=\"form-group text-left\">\n        <label class=\"left\"> 유효기간 </label>\n        <input type=\"text\" [(ngModel)]=\"expire\" name=\"expire\" class=\"form-control\" placeholder=\"expire\" />\n    </div>\n\n    <div class=\"form-group text-left\">\n        <label class=\"left\"> 보안코드 </label>\n        <input type=\"number\" [(ngModel)]=\"secretnum\" name=\"secretnum\" class=\"form-control\" placeholder=\"secure code\" />\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-block btn-primary btn-lg \">\n        결제하기\n    </button>\n</form>");
 
 /***/ }),
 
@@ -123,7 +136,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>payshop works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html>\n\n<head>\n    <meta charset=\"UTF-8\">\n    <title> Payshop </title>\n\n    <script src=\"//developers.kakao.com/sdk/js/kakao.min.js\"></script>\n</head>\n\n<body>\n\n    <h1> kakaoPay api 이용하기 </h1>\n\n    <input type=\"button\" value=\"카카오페이로 결제하기\" ng-click=\"kakaopayready()\">\n\n\n\n</body>\n\n</html>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/paysuccess/paysuccess.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/paysuccess/paysuccess.component.html ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>paysuccess works!</p>\n");
 
 /***/ }),
 
@@ -137,6 +163,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"name\">\r\n  <h2 class=\"page-header\">{{ name }}</h2>\r\n  <ul class=\"iist-group\">\r\n    <li class=\"list-group-item\">Username:{{ username }}</li>\r\n    <li class=\"list-group-item\">Email:{{ email }}</li>\r\n  </ul>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/refundinfo/refundinfo.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/refundinfo/refundinfo.component.html ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>refundinfo works!</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/refundsuccess/refundsuccess.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/refundsuccess/refundsuccess.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>refundsuccess works!</p>\n");
 
 /***/ }),
 
@@ -162,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<input\r\n  type=\"text\"\r\n  placeholder=\"제목을 입력해 주세요!\"\r\n  maxlength=\"29\"\r\n  id=\"m_txtTitle\"\r\n  name=\"m_txtTitle\"\r\n  value=\"\"\r\n/>\r\n<body\r\n  class=\"se2_inputarea\"\r\n  style=\"height: 284px; font-family: Gulim, sans-serif; font-size: 10pt;\"\r\n  onfocus=\"if (parent.mwCore) {parent.mwCore.focusOnEditor();}\"\r\n  contenteditable=\"true\"\r\n>\r\n  <p><br /></p>\r\n</body>\r\n<button\r\n  type=\"button\"\r\n  id=\"sendBtn\"\r\n  class=\"b do_send _c1(mwCore|sendMail) _ccr(wrt.send) _stopDefault save_mail\"\r\n>\r\n  저장\r\n</button>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form (ngSubmit)=\"onWriteBoard()\">\r\n  <input\r\n    class=\"form-control\"\r\n    type=\"text\"\r\n    [(ngModel)]=\"title\"\r\n    title=\"제목을 입력해 주세요!\"\r\n    maxlength=\"29\"\r\n    id=\"title\"\r\n    name=\"title\"\r\n    value=\"\"\r\n  />\r\n  <input\r\n    type=\"text\"\r\n    [(ngModel)]=\"context\"\r\n    name=\"context\"\r\n    class=\"form-control\"\r\n    style=\"height: 284px; font-family: Gulim, sans-serif; font-size: 10pt; background: darkgray;\"\r\n    onfocus=\"if (parent.mwCore) {parent.mwCore.focusOnEditor();}\"\r\n    contenteditable=\"true\"\r\n  />\r\n\r\n  <p><br /></p>\r\n\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"작성완료\" />\r\n</form>\r\n\r\n<!--\r\n  <input\r\n  type=\"text\"\r\n  title=\"제목을 입력해 주세요!\"\r\n  maxlength=\"29\"\r\n  id=\"m_txtTitle\"\r\n  name=\"m_txtTitle\"\r\n  value=\"\"\r\n/>\r\n<body\r\n  class=\"se2_inputarea\"\r\n  style=\"height: 284px; font-family: Gulim, sans-serif; font-size: 10pt; background: darkgray;\"\r\n  onfocus=\"if (parent.mwCore) {parent.mwCore.focusOnEditor();}\"\r\n  contenteditable=\"true\"\r\n>\r\n  <p><br /></p>\r\n</body>\r\n<button\r\n  type=\"button\"\r\n  id=\"sendBtn\"\r\n  class=\"b do_send _c1(mwCore|sendMail) _ccr(wrt.send) _stopDefault save_mail\"\r\n>\r\n  x\r\n</button>\r\n--->\r\n");
 
 /***/ }),
 
@@ -417,6 +469,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
 /* harmony import */ var _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/profile/profile.component */ "./src/app/components/profile/profile.component.ts");
 /* harmony import */ var _guards_auth_guards__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./guards/auth.guards */ "./src/app/guards/auth.guards.ts");
+/* harmony import */ var _components_payshop_payshop_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/payshop/payshop.component */ "./src/app/components/payshop/payshop.component.ts");
+/* harmony import */ var _components_payinfo_payinfo_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/payinfo/payinfo.component */ "./src/app/components/payinfo/payinfo.component.ts");
+/* harmony import */ var _components_paysuccess_paysuccess_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/paysuccess/paysuccess.component */ "./src/app/components/paysuccess/paysuccess.component.ts");
+/* harmony import */ var _components_refundinfo_refundinfo_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/refundinfo/refundinfo.component */ "./src/app/components/refundinfo/refundinfo.component.ts");
+/* harmony import */ var _components_refundsuccess_refundsuccess_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/refundsuccess/refundsuccess.component */ "./src/app/components/refundsuccess/refundsuccess.component.ts");
+
+
+
+
+
 
 
 
@@ -441,7 +503,12 @@ const routes = [
     },
     { path: "profile", component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_10__["ProfileComponent"], canActivate: [_guards_auth_guards__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
     { path: "board", component: _components_board_board_component__WEBPACK_IMPORTED_MODULE_7__["BoardComponent"] },
-    { path: "writeboard", component: _components_writeboard_writeboard_component__WEBPACK_IMPORTED_MODULE_8__["WriteboardComponent"] }
+    { path: "writeboard", component: _components_writeboard_writeboard_component__WEBPACK_IMPORTED_MODULE_8__["WriteboardComponent"] },
+    { path: "payshop", component: _components_payshop_payshop_component__WEBPACK_IMPORTED_MODULE_12__["PayshopComponent"] },
+    { path: "payinfo", component: _components_payinfo_payinfo_component__WEBPACK_IMPORTED_MODULE_13__["PayinfoComponent"] },
+    { path: "paysuccess", component: _components_paysuccess_paysuccess_component__WEBPACK_IMPORTED_MODULE_14__["PaysuccessComponent"] },
+    { path: "refundinfo", component: _components_refundinfo_refundinfo_component__WEBPACK_IMPORTED_MODULE_15__["RefundinfoComponent"] },
+    { path: "refundsuccess", component: _components_refundsuccess_refundsuccess_component__WEBPACK_IMPORTED_MODULE_16__["RefundsuccessComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -534,6 +601,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_board_board_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/board/board.component */ "./src/app/components/board/board.component.ts");
 /* harmony import */ var _components_writeboard_writeboard_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/writeboard/writeboard.component */ "./src/app/components/writeboard/writeboard.component.ts");
 /* harmony import */ var _components_payshop_payshop_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/payshop/payshop.component */ "./src/app/components/payshop/payshop.component.ts");
+/* harmony import */ var _components_paysuccess_paysuccess_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/paysuccess/paysuccess.component */ "./src/app/components/paysuccess/paysuccess.component.ts");
+/* harmony import */ var _components_refundinfo_refundinfo_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/refundinfo/refundinfo.component */ "./src/app/components/refundinfo/refundinfo.component.ts");
+/* harmony import */ var _components_payinfo_payinfo_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/payinfo/payinfo.component */ "./src/app/components/payinfo/payinfo.component.ts");
+/* harmony import */ var _components_refundsuccess_refundsuccess_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/refundsuccess/refundsuccess.component */ "./src/app/components/refundsuccess/refundsuccess.component.ts");
+
+
+
+
 
 
 
@@ -572,7 +647,11 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_community_community_component__WEBPACK_IMPORTED_MODULE_18__["CommunityComponent"],
             _components_board_board_component__WEBPACK_IMPORTED_MODULE_19__["BoardComponent"],
             _components_writeboard_writeboard_component__WEBPACK_IMPORTED_MODULE_20__["WriteboardComponent"],
-            _components_payshop_payshop_component__WEBPACK_IMPORTED_MODULE_21__["PayshopComponent"]
+            _components_payshop_payshop_component__WEBPACK_IMPORTED_MODULE_21__["PayshopComponent"],
+            _components_paysuccess_paysuccess_component__WEBPACK_IMPORTED_MODULE_22__["PaysuccessComponent"],
+            _components_refundinfo_refundinfo_component__WEBPACK_IMPORTED_MODULE_23__["RefundinfoComponent"],
+            _components_payinfo_payinfo_component__WEBPACK_IMPORTED_MODULE_24__["PayinfoComponent"],
+            _components_refundsuccess_refundsuccess_component__WEBPACK_IMPORTED_MODULE_25__["RefundsuccessComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -631,20 +710,9 @@ let BoardComponent = class BoardComponent {
         this.authservice = authservice;
     }
     ngOnInit() {
-        //TODO 이부분 잘건드려야대
-        /* this.authservice.getboradtitle().subscribe(
-          board => {
-            this.writer = board.boardurl.writer;
-            this.date = board.boardurl.date;
-            this.views = board.boards.views;
-          },
-          err => {
-            console.log(err);
-            return false;
-          }
-        );*/
-        this.boardtitle = localStorage.getItem("board");
-        this.title = JSON.parse(this.boardtitle);
+        this.authservice.getBoard().subscribe(boards => {
+            this.boards = boards;
+        });
     }
 };
 BoardComponent.ctorParameters = () => [
@@ -956,6 +1024,97 @@ NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/payinfo/payinfo.component.scss":
+/*!***********************************************************!*\
+  !*** ./src/app/components/payinfo/payinfo.component.scss ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGF5aW5mby9wYXlpbmZvLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/payinfo/payinfo.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/payinfo/payinfo.component.ts ***!
+  \*********************************************************/
+/*! exports provided: PayinfoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PayinfoComponent", function() { return PayinfoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var src_app_services_validate_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/validate.service */ "./src/app/services/validate.service.ts");
+
+
+
+
+
+
+let PayinfoComponent = class PayinfoComponent {
+    constructor(validateService, flashMessage, authService, router) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.authService = authService;
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+    onProceedSubmit() {
+        const user = {
+            name: this.name,
+            username: this.username,
+            email: this.email
+        };
+        const card = {
+            cardnumber: this.cardnumber,
+            expire: this.expire,
+            secretnum: this.secretnum
+        };
+        if (!this.validateService.validateProceed(user, card)) {
+            this.flashMessage.show("모든 필드를 채워주세요", {
+                cssClass: "alert-danger text-center",
+                timeout: 3000
+            });
+            return false;
+        }
+        //Validate Email
+        if (!this.validateService.validateEmail(user.email)) {
+            this.flashMessage.show("유효한 이메일 주소를 입력하세요", {
+                cssClass: "alert-danger text-center",
+                timeout: 3000
+            });
+            return false;
+        }
+    }
+};
+PayinfoComponent.ctorParameters = () => [
+    { type: src_app_services_validate_service__WEBPACK_IMPORTED_MODULE_5__["ValidateService"] },
+    { type: angular2_flash_messages__WEBPACK_IMPORTED_MODULE_4__["FlashMessagesService"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+PayinfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-payinfo',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./payinfo.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/payinfo/payinfo.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./payinfo.component.scss */ "./src/app/components/payinfo/payinfo.component.scss")).default]
+    })
+], PayinfoComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/payshop/payshop.component.scss":
 /*!***********************************************************!*\
   !*** ./src/app/components/payshop/payshop.component.scss ***!
@@ -981,13 +1140,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PayshopComponent", function() { return PayshopComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
+
+
+const HOST = "https://kapi.kakao.com";
 let PayshopComponent = class PayshopComponent {
-    constructor() { }
+    constructor(http) {
+        this.http = http;
+    }
     ngOnInit() {
+        const httpheader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            "Authorization": "0af0f3ff44cc213354ef88e1ab3d3494",
+            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+        });
+        let options = {
+            headers: httpheader
+        };
+        let params = {
+            "cid": "TC0ONETIME",
+            "partner_order_id": "9999",
+            "partner_user_id": "slackid",
+            "item_name": "serverpass",
+            "quantity": "1",
+            "total_amount": "900",
+            "tax_free_amount": "90",
+            "approval_url": "http://localhost:4200/paymentsuccess",
+            "cancel_url": "http://localhost:4200/paymentcancel",
+            "fail_url": "http://localhost:4200/paymentfail"
+        };
+        console.log(this.http.post(HOST + "/v1/payment/ready", params, options));
+        this.response = this.http.post(HOST + "/v1/payment/ready", params, options);
+        let nexturl = this.response["next_redirect_pc_url"];
+        console.log(this.response);
+        return nexturl;
+    }
+    kakaopayprocess() {
+    }
+    kakaopayready() {
+        const httpheader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            "Authorization": "0af0f3ff44cc213354ef88e1ab3d3494",
+            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+        });
+        let options = {
+            headers: httpheader
+        };
+        let params = {
+            "cid": "TC0ONETIME",
+            "partner_order_id": "9999",
+            "partner_user_id": "slackid",
+            "item_name": "serverpass",
+            "quantity": "1",
+            "total_amount": "900",
+            "tax_free_amount": "90",
+            "approval_url": "http://localhost:4200/paymentsuccess",
+            "cancel_url": "http://localhost:4200/paymentcancel",
+            "fail_url": "http://localhost:4200/paymentfail"
+        };
+        this.response = this.http.post(HOST + "/v1/payment/ready", params, options);
+        let nexturl = this.response["next_redirect_pc_url"];
+        console.log(nexturl);
+        return nexturl;
     }
 };
+PayshopComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
 PayshopComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-payshop',
@@ -995,6 +1214,50 @@ PayshopComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./payshop.component.scss */ "./src/app/components/payshop/payshop.component.scss")).default]
     })
 ], PayshopComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/paysuccess/paysuccess.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/paysuccess/paysuccess.component.scss ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGF5c3VjY2Vzcy9wYXlzdWNjZXNzLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/paysuccess/paysuccess.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/paysuccess/paysuccess.component.ts ***!
+  \***************************************************************/
+/*! exports provided: PaysuccessComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaysuccessComponent", function() { return PaysuccessComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let PaysuccessComponent = class PaysuccessComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+PaysuccessComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-paysuccess',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./paysuccess.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/paysuccess/paysuccess.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./paysuccess.component.scss */ "./src/app/components/paysuccess/paysuccess.component.scss")).default]
+    })
+], PaysuccessComponent);
 
 
 
@@ -1054,6 +1317,94 @@ ProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./profile.component.scss */ "./src/app/components/profile/profile.component.scss")).default]
     })
 ], ProfileComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/refundinfo/refundinfo.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/refundinfo/refundinfo.component.scss ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmVmdW5kaW5mby9yZWZ1bmRpbmZvLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/refundinfo/refundinfo.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/refundinfo/refundinfo.component.ts ***!
+  \***************************************************************/
+/*! exports provided: RefundinfoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RefundinfoComponent", function() { return RefundinfoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RefundinfoComponent = class RefundinfoComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+RefundinfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-refundinfo',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./refundinfo.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/refundinfo/refundinfo.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./refundinfo.component.scss */ "./src/app/components/refundinfo/refundinfo.component.scss")).default]
+    })
+], RefundinfoComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/refundsuccess/refundsuccess.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/refundsuccess/refundsuccess.component.scss ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmVmdW5kc3VjY2Vzcy9yZWZ1bmRzdWNjZXNzLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/refundsuccess/refundsuccess.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/refundsuccess/refundsuccess.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: RefundsuccessComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RefundsuccessComponent", function() { return RefundsuccessComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RefundsuccessComponent = class RefundsuccessComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+RefundsuccessComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-refundsuccess',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./refundsuccess.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/refundsuccess/refundsuccess.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./refundsuccess.component.scss */ "./src/app/components/refundsuccess/refundsuccess.component.scss")).default]
+    })
+], RefundsuccessComponent);
 
 
 
@@ -1146,7 +1497,7 @@ let RegisterComponent = class RegisterComponent {
                 }
             }
             else {
-                this.flashMessage.show("가입에 실패했습니다.", {
+                this.flashMessage.show("동일한 아이디가 존재합니다.", {
                     cssClass: "alert-danger",
                     timeout: 3000
                 });
@@ -1198,16 +1549,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WriteboardComponent", function() { return WriteboardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/validate.service */ "./src/app/services/validate.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
 
 
 let WriteboardComponent = class WriteboardComponent {
-    constructor() { }
+    constructor(validateService, flashMessage, authService, router) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.authService = authService;
+        this.router = router;
+        //TODO today Date format 맞추기
+        this.today = Date.now();
+    }
     ngOnInit() {
+        this.authService.getProfile().subscribe(profile => {
+            this.userwriter = profile.user.username;
+        }, err => {
+            console.log(err);
+            return false;
+        });
+    }
+    onWriteBoard() {
+        const board = {
+            title: this.title,
+            context: this.context,
+            writer: this.userwriter,
+            date: this.today
+        };
+        if (!this.validateService.vaildateBoard(board)) {
+            this.flashMessage.show("모든 필드를 채워주세요", {
+                cssClass: "alert-danger",
+                timeout: 3000
+            });
+            return false;
+        }
+        this.authService.writeboard(board).subscribe(data => {
+            if (data.success) {
+                this.flashMessage.show("글쓰기 완료", {
+                    cssClass: "alert-success",
+                    timeout: 3000
+                });
+                this.router.navigate["/board"];
+            }
+        });
     }
 };
+WriteboardComponent.ctorParameters = () => [
+    { type: _services_validate_service__WEBPACK_IMPORTED_MODULE_4__["ValidateService"] },
+    { type: angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesService"] },
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 WriteboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-writeboard',
+        selector: "app-writeboard",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./writeboard.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/writeboard/writeboard.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./writeboard.component.scss */ "./src/app/components/writeboard/writeboard.component.scss")).default]
     })
@@ -1290,12 +1693,22 @@ let AuthService = class AuthService {
         this.http = http;
         this.jwtHelper = jwtHelper;
     }
+    prepEndpoint(ep) {
+        // 1. localhost에 포팅시
+        return "http://localhost:3000/" + ep;
+        // 2. Heroku 클라우드 서버에 포팅시
+        // return ep;
+    }
     registerUser(user) {
-        const registerUrl = this.prependpoint("/users/register");
+        const registerUrl = this.prepEndpoint("users/register");
         return this.http.post(registerUrl, user, httpOptions);
     }
+    writeboard(board) {
+        const boardurl = this.prepEndpoint("addbor/addborcontext");
+        return this.http.post(boardurl, board, httpOptions);
+    }
     authenticateUser(login) {
-        const loginUrl = this.prependpoint("/users/authenticate");
+        const loginUrl = this.prepEndpoint("users/authenticate");
         return this.http.post(loginUrl, login, httpOptions);
     }
     getProfile() {
@@ -1306,13 +1719,17 @@ let AuthService = class AuthService {
                 Authorization: this.authToken
             })
         };
-        const profileUrl = "/users/profile";
+        const profileUrl = this.prepEndpoint("users/profile");
         return this.http.get(profileUrl, httpOptions1);
     }
     getboradtitle() {
-        this.title = localStorage.getItem("title");
-        const boardurl = this.prependpoint("/addbor/addborcontext");
-        return this.http.get(boardurl, httpOptions);
+        const httpOptions2 = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                "Content-Type": "application/json"
+            })
+        };
+        const boardurl = this.prepEndpoint("addbor/board");
+        return this.http.get(boardurl, httpOptions2);
     }
     storeUserData(token, user) {
         localStorage.setItem("id_token", token);
@@ -1328,9 +1745,9 @@ let AuthService = class AuthService {
     loggedIn() {
         return !this.jwtHelper.isTokenExpired(this.authToken);
     }
-    prependpoint(ep) {
-        return "http://localhost:3000/" + ep;
-        //return ep
+    getBoard() {
+        const bbord = this.prepEndpoint("addbor/board");
+        return this.http.get(bbord, httpOptions);
     }
 };
 AuthService.ctorParameters = () => [
@@ -1374,9 +1791,30 @@ let ValidateService = class ValidateService {
             return true;
         }
     }
+    validateProceed(user, card) {
+        if (user.name == undefined ||
+            user.email == undefined ||
+            user.username == undefined ||
+            card.cardnumber == undefined ||
+            card.expire == undefined ||
+            card.secretnum == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
     validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
+    }
+    vaildateBoard(board) {
+        if (board.title == undefined || board.context == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 };
 ValidateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
