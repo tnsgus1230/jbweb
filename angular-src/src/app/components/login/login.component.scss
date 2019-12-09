@@ -1,6 +1,5 @@
 .btn {
   font-family: "Noto Sans KR", sans-serif;
-
   max-width: 350px;
   height: 50px;
   font-size: 16px;
@@ -10,37 +9,29 @@
   background: #008542;
   color: white;
   margin: 0 auto;
-}
+} //버튼 디자인
 
 .btn:hover {
   background-color: rgb(32, 31, 31) !important;
   opacity: 0.8;
   transition: background-color 0.7s ease, font-size 0.7s linear;
-
   color: white;
-  transition: color 0.7s ease, font-size 0.7 linear;
-  transition: width 0.9s ease, font-size 0.9 linear;
-  transition: height 0.9s ease, font-size 0.9 linear;
-  -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
-  -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
-  box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
-}
+} //버튼 애니메이션 효과
+
 .page-header {
   font-family: "Noto Sans KR", sans-serif;
 }
 .form-group {
+  //입력창
   max-width: 350px;
-  color: gray;
-  //float: none;
+  color: rgb(80, 59, 59);
   margin: 0 auto;
-  //align-items: center;
 }
 .container {
+  //전체를 감싸는 container div 디자인
   max-width: 100%;
   margin-top: 0px;
-
   background-image: url(../../../assets/login.jpg);
-
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -61,12 +52,13 @@
   font-weight: bold;
 }
 .alink:hover {
-  color: green;
+  color: green; //링크요소 애니메이션
 }
 .ppap {
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.76);
   margin-top: 200px;
-  display: inline-block; //마진-탑으로 생긴 공백 채우기
+  display: inline-block; //margin-top 으로 생긴 공백 채우기
   max-width: 2000px;
   margin-bottom: 89px;
-}
+  border-radius: 20px;
+} //로그인요소 전체를를 감싸는 div
