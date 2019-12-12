@@ -26,6 +26,7 @@ import { PaysuccessComponent } from './components/paysuccess/paysuccess.componen
 import { RefundinfoComponent } from './components/refundinfo/refundinfo.component';
 import { PayinfoComponent } from './components/payinfo/payinfo.component';
 import { RefundsuccessComponent } from './components/refundsuccess/refundsuccess.component';
+import { CertComponent } from './components/cert/cert.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RefundsuccessComponent } from './components/refundsuccess/refundsuccess
     PaysuccessComponent,
     RefundinfoComponent,
     PayinfoComponent,
-    RefundsuccessComponent
+    RefundsuccessComponent,
+    CertComponent
   ],
   imports: [
     BrowserModule,

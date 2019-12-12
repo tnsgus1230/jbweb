@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { ValidateService } from 'src/app/services/validate.service';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-payinfo',
@@ -22,6 +21,7 @@ export class PayinfoComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router
+
   ) { }
 
   ngOnInit() {
@@ -98,6 +98,22 @@ export class PayinfoComponent implements OnInit {
           cssClass: "alert-danger",
           timeout: 3000
         })
+      }
+    })
+
+
+    //서버 화이트리스트 추가
+    //const defaultpath = "E:\study\3학년 2학기\웹애플리케이션보안\1.5.2";
+    /*
+    fs.readFile('E:\study\3학년 2학기\웹애플리케이션보안\1.5.2\white-list.txt', 'utf8', (err, data) => {
+      if (err) console.log(err)
+      else console.log(data)
+    })*/
+    this.authService.registerWhitelist(user.username).subscribe(data => {
+      if (data.success) {
+        console.log(data)
+      } else {
+        console.log("실패" + data)
       }
     })
 

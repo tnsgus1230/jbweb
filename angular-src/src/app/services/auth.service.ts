@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../models/User";
 import { Board } from "../models/Board";
-import { Paylog } from "../models/Paylog"
 import { JwtHelperService } from "@auth0/angular-jwt";
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,6 +29,9 @@ export class AuthService {
     // return ep;
   }
 
+  //whitelist register
+
+
   //payment methods
   storeOrderData(paysave): Observable<any> {
     const paysaveUrl = this.prepEndpoint("payments/paysave")
@@ -50,7 +52,10 @@ export class AuthService {
   }
 
   //
-
+  registerWhitelist(user): Observable<any> {
+    const registerWhitelistUrl = this.prepEndpoint("whitelist/register")
+    return this.http.post(registerWhitelistUrl, user, httpOptions)
+  }
   registerUser(user): Observable<any> {
     const registerUrl = this.prepEndpoint("users/register");
     return this.http.post(registerUrl, user, httpOptions);
