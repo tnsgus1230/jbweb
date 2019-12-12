@@ -102,21 +102,6 @@ export class PayinfoComponent implements OnInit {
     })
 
 
-    //서버 화이트리스트 추가
-    //const defaultpath = "E:\study\3학년 2학기\웹애플리케이션보안\1.5.2";
-    /*
-    fs.readFile('E:\study\3학년 2학기\웹애플리케이션보안\1.5.2\white-list.txt', 'utf8', (err, data) => {
-      if (err) console.log(err)
-      else console.log(data)
-    })*/
-    this.authService.registerWhitelist(user.username).subscribe(data => {
-      if (data.success) {
-        console.log(data)
-      } else {
-        console.log("실패" + data)
-      }
-    })
-
 
   }
 }

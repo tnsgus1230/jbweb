@@ -4,6 +4,9 @@ import { Observable } from "rxjs";
 import { User } from "../models/User";
 import { Board } from "../models/Board";
 import { JwtHelperService } from "@auth0/angular-jwt";
+import * as forge from 'node-forge'
+
+const pki = forge.pki
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json"
@@ -19,6 +22,9 @@ export class AuthService {
   title: string;
   board: Board;
   items: string[];
+  ptoken: string;
+  stoken: string;
+  userNoPW: string;
 
   constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
   prepEndpoint(ep) {
@@ -52,10 +58,6 @@ export class AuthService {
   }
 
   //
-  registerWhitelist(user): Observable<any> {
-    const registerWhitelistUrl = this.prepEndpoint("whitelist/register")
-    return this.http.post(registerWhitelistUrl, user, httpOptions)
-  }
   registerUser(user): Observable<any> {
     const registerUrl = this.prepEndpoint("users/register");
     return this.http.post(registerUrl, user, httpOptions);
@@ -89,11 +91,20 @@ export class AuthService {
     return this.http.get(boardurl, httpOptions2);
   }
 
-  storeUserData(token, user) {
+  storeUserData1(token, user) {
     localStorage.setItem("id_token", token);
     localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     this.user = user;
+  }
+
+  storeUserData(ptoken, stoken, userNoPW) {
+    localStorage.setItem("ptoken", ptoken);
+    localStorage.setItem("stoken", ptoken);
+    localStorage.setItem("user", JSON.stringify(userNoPW));
+    this.ptoken = ptoken;
+    this.stoken = stoken;
+    this.userNoPW = userNoPW
   }
 
   validatelogin(login) {
@@ -105,11 +116,6 @@ export class AuthService {
     }
   }
 
-  logout() {
-    this.authToken = null;
-    this.user = null;
-    localStorage.clear();
-  }
   loggedIn() {
     return !this.jwtHelper.isTokenExpired(this.authToken);
   }
@@ -118,5 +124,63 @@ export class AuthService {
     const bbord = this.prepEndpoint("addbor/board");
 
     return this.http.get(bbord, httpOptions);
+  }
+
+  certRequest(request): Observable<any> {
+    // 키쌍 생성
+    let keyPair = pki.rsa.generateKeyPair(2048);
+    let publicKey = keyPair.publicKey;
+    let privateKey = keyPair.privateKey;
+    let publicKeyPem = pki.publicKeyToPem(publicKey);
+    let privateKeyPem = pki.privateKeyToPem(privateKey);
+    // 개인키 저장
+    localStorage.setItem('privateKey', privateKeyPem);
+    // 인증서 발급 요청 req 생성
+    const req = {
+      country: request.country,
+      state: request.state,
+      locality: request.locality,
+      organization: request.organization,
+      orgUnit: request.orgUnit,
+      common: request.common,
+      publicKey: publicKeyPem
+    }
+    const certUrl = this.prepEndpoint('users/cert');
+    return this.http.post(certUrl, req, httpOptions);
+  }
+
+  storeCert(cert, caCert) {
+    localStorage.setItem('cert', cert);
+    localStorage.setItem('caCert', caCert);
+  }
+
+  authenticateSigUser(): Observable<any> {
+    const privateKeyPem = localStorage.getItem('privateKey');
+    const privateKey = pki.privateKeyFromPem(privateKeyPem);
+    const certPem = localStorage.getItem('cert');
+    const currentTime = new Date().getTime();
+    const cert = pki.certificateFromPem(certPem);
+    const username = cert.subject.getField('CN').value;
+    let md = forge.md.sha1.create();
+    md.update(username, 'utf8');
+    md.update(currentTime, 'utf8');
+    const signature = privateKey.sign(md);
+    const signatureHex = forge.util.bytesToHex(signature);
+    const request = {
+      username: username,
+      currentTime: currentTime,
+      signatureHex: signatureHex,
+      certPem: certPem
+    };
+    const loginUrl = this.prepEndpoint('users/authenticateSig');
+    return this.http.post(loginUrl, request, httpOptions);
+  }
+  logout() {
+    this.ptoken = null;
+    this.stoken = null;
+    this.userNoPW = null;
+    localStorage.removeItem('ptoken');
+    localStorage.removeItem('stoken');
+    localStorage.removeItem('user');
   }
 }

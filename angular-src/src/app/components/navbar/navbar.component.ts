@@ -13,9 +13,9 @@ export class NavbarComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private flashMessage: FlashMessagesService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   onLogoutClick() {
     this.authService.logout();
     this.flashMessage.show("Logout", {
@@ -28,4 +28,14 @@ export class NavbarComponent implements OnInit {
   checkLoggedIn() {
     return this.authService.loggedIn();
   }
+  onDeleteCertClick() {
+    localStorage.clear(); // 로컬스토리지 전체 삭제
+    this.flashMessage.show('인증서 삭제 완료. 다시 로그인하세요. ', {
+      cssClass: 'alert-success',
+      timeout: 3000
+    });
+    this.router.navigate(['/login']);
+    return false;
+  }
+
 }

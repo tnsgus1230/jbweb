@@ -27,6 +27,7 @@ import { RefundinfoComponent } from './components/refundinfo/refundinfo.componen
 import { PayinfoComponent } from './components/payinfo/payinfo.component';
 import { RefundsuccessComponent } from './components/refundsuccess/refundsuccess.component';
 import { CertComponent } from './components/cert/cert.component';
+import { LoginCAComponent } from './components/login-ca/login-ca.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CertComponent } from './components/cert/cert.component';
     RefundinfoComponent,
     PayinfoComponent,
     RefundsuccessComponent,
-    CertComponent
+    CertComponent,
+    LoginCAComponent
   ],
   imports: [
     BrowserModule,

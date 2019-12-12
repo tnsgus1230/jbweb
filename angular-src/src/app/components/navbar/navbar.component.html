@@ -10,21 +10,13 @@
     </li>
 
     <li class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle text-white"
-        role="button"
-        aria-expanded="false"
-        aria-haspopup="true"
-        href="#"
-        data-toggle="dropdown"
-      >
+      <a class="nav-link dropdown-toggle text-white" role="button" aria-expanded="false" aria-haspopup="true" href="#"
+        data-toggle="dropdown">
         게시판
       </a>
-      <div
-        class="dropdown-menu"
+      <div class="dropdown-menu"
         style="left: 0px; top: 1px; position: absolute; transform: translate3d(-36px, 34px, 0px);"
-        x-placement="bottom-start"
-      >
+        x-placement="bottom-start">
         <a class="dropdown-item" routerLink="/board">자유게시판</a>
       </div>
     </li>
@@ -32,16 +24,10 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <!---간격을 위한 공백-->
 
-    <img
-      src="../../../assets//Minecraft-Logo-500x281.jpg"
-      class="img"
-      onclick="location.href='/'"
-    />
+    <img src="../../../assets//Minecraft-Logo-500x281.jpg" class="img" onclick="location.href='/'" />
 
     <li class="nav-item">
-      <a class="nav-link  text-white" href="/payshop"
-        >&nbsp;&nbsp;&nbsp;Payshop</a
-      >
+      <a class="nav-link  text-white" href="/payshop">&nbsp;&nbsp;&nbsp;Payshop</a>
     </li>
 
     <li class="nav-item">
@@ -49,23 +35,22 @@
     </li>
 
     <li class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle text-white"
-        role="button"
-        aria-expanded="false"
-        aria-haspopup="true"
-        href="#"
-        data-toggle="dropdown"
-        >계정메뉴</a
-      >
-      <div
-        class="dropdown-menu"
+      <a class="nav-link dropdown-toggle text-white" role="button" aria-expanded="false" aria-haspopup="true" href="#"
+        data-toggle="dropdown">계정메뉴</a>
+      <div class="dropdown-menu"
         style="left: 0px; top: 1px; position: absolute; transform: translate3d(-27px, 34px, 0px);"
-        x-placement="bottom-start"
-      >
-        <a class="dropdown-item " routerLink="/register">회원가입</a>
+        x-placement="bottom-start">
+        <a *ngIf="!checkLoggedIn()" class="dropdown-item " routerLink="/register">회원가입</a>
         &nbsp;
-        <a class="dropdown-item " routerLink="/login">로그인</a>
+        <a *ngIf="!checkLoggedIn()" class="dropdown-item " routerLink="/login">로그인</a>
+        &nbsp;
+        <a *ngIf="checkLoggedIn()" class="dropdown-item " routerLink="/login">로그아웃</a>
+        &nbsp;
+        <a *ngIf="checkLoggedIn()" class="dropdown-item " routerLink="/cert">인증서발급</a>
+        &nbsp;
+        <a *ngIf="!checkLoggedIn()" class="dropdown-item " routerLink="/loginCA">인증서로그인</a>
+        &nbsp;
+        <a *ngIf="checkLoggedIn()" class="dropdown-item " (click)="onDeleteCertClick()"  href="#">인증서삭제</a>
       </div>
     </li>
   </ul>

@@ -17,6 +17,9 @@ import { PayinfoComponent } from './components/payinfo/payinfo.component';
 import { PaysuccessComponent } from './components/paysuccess/paysuccess.component';
 import { RefundinfoComponent } from './components/refundinfo/refundinfo.component';
 import { RefundsuccessComponent } from './components/refundsuccess/refundsuccess.component';
+import { CertComponent } from './components/cert/cert.component';
+import { LoginCAComponent } from './components/login-ca/login-ca.component';
+
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "navbar", component: NavbarComponent },
@@ -34,7 +37,9 @@ const routes: Routes = [
   { path: "payinfo", component: PayinfoComponent },
   { path: "paysuccess", component: PaysuccessComponent },
   { path: "refundinfo", component: RefundinfoComponent },
-  { path: "refundsuccess", component: RefundsuccessComponent }
+  { path: "refundsuccess", component: RefundsuccessComponent },
+  { path: "cert", component: CertComponent, canActivate: [AuthGuard] },
+  { path: "loginCA", component: LoginCAComponent }
 ];
 
 @NgModule({
