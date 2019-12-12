@@ -7,6 +7,7 @@
 }
 
 .btn:hover {
+  //툴팁 버튼
   position: relative;
   opacity: 0.8;
 
@@ -16,35 +17,25 @@
 }
 .btn:after {
   background-color: rgba(0, 0, 0, 0.8);
-
-  -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
-  -soz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
-  box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
-
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-
   -webkit-transition: bottom 0.5s ease, opacity 0.5s ease;
   -moz-transition: bottom 0.5s ease, opacity 0.5s ease;
-  transition: bottom 0.5s ease, opacity 0.5s ease;
+  transition: bottom 0.5s ease, opacity 0.5s ease; //애니메이션 효과
   color: #181212;
   font-size: 12px;
-
   padding: 7px 12px;
   position: absolute;
-  //margin-bottom: 10px;
   width: 250px;
   min-width: 50px;
   max-width: 300px;
-  word-wrap: break-word;
   color: white;
-  //z-index: 9999;
   opacity: 0;
   top: 92%;
   margin-left: -135px;
-  content: attr(text);
-  z-index: 1; //버튼 요소를 div위로 나타내기
+  content: attr(text); //텍스트 형식으로 툴팁 띄우기
+  z-index: 1; //버튼 툴팁을 메뉴바에 가려지도록 설정
 }
 .btn:hover::after {
   top: 130%;
@@ -52,11 +43,12 @@
   opacity: 1;
   margin-left: -80px;
   z-index: 1;
-}
+} //툴팁 버튼
 
 .alert {
+  //페이지 하단 구매버튼
   margin-left: 200px;
-  margin: 0 auto; //구매버튼에 추가
+  margin: 0 auto;
   margin-top: 30px;
   text-align: center;
   max-width: 380px;
@@ -65,27 +57,19 @@
   padding: 1.5em 0.6em 0.3em;
   font-size: 20px;
   font-weight: bolder;
+  //그림자 설정
   -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
   box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 0.4);
-  transition: background-color 0.7s ease;
+  //그림자 설정
+  transition: 0.7s; //애니메이션 진행까지의 시간
   background: rgb(92, 207, 97);
   color: white;
-  //margin-left: 80px; //구매 버튼 x위치
-  //margin-top: 215px;
 }
 .alert:hover {
   background-color: rgb(0, 0, 0) !important;
-  opacity: 0.8;
-  transition: background-color 0.7s ease, font-size 0.7s linear;
-
+  opacity: 0.8; //투명도 설정
   color: white;
-  transition: color 0.7s ease, font-size 0.7 linear;
-  transition: width 0.9s ease, font-size 0.9 linear;
-  transition: height 0.9s ease, font-size 0.9 linear;
-  -webkit-box-shadow: 1px 1px 3px 1px rgba(8, 8, 8, 0.4);
-  -moz-box-shadow: 1px 1px 3px 1px rgba(19, 18, 18, 0.4);
-  box-shadow: 1px 1px 3px 1px rgba(20, 20, 20, 0.4);
 }
 
 .trash {
@@ -93,23 +77,22 @@
   font-weight: bolder;
 }
 .card {
-  //after하면 아래로 내려가고 배너div를 넘어감
-  //margin-left: 485px;
-  //margin-top: -170px;
+  //하단 배너 부분
+  background: rgba(207, 205, 205, 0.678);
   height: 555px;
   margin-top: 150px;
   margin: auto;
+  transition: 0.5s;
 }
-.col-md-8 {
-  margin: auto;
+.card:hover {
+  -webkit-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.4);
+  box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.4);
+  transition: 0.5s;
+}
+//하단 배너 부분
 
-  //margin-top: 205px; //하단 상자 길이조절
-}
-.bd-example {
-  max-width: 2500px;
-  margin: 0 auto;
-}
-
+//중간 배너 이미지
 .w-100 {
   height: 220px;
   transition: 0.5s;
@@ -118,32 +101,16 @@
   -webkit-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
   box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
-  transition: box-shadow 0.5;
-
-  -moz-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-  transition: box-shadow 0.5s;
-  -moz-box-shadow-delay: 0.5s;
-  -webkit-box-shadow-delay: 0.5s;
+  transition: 0.5s;
 }
+//중간 배너 이미지
 
 .col-md-4 {
   max-height: 9999px;
   max-width: 688px;
+  background: rgba(65, 24, 24, 0);
 }
 
-.card:hover {
-  -webkit-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.4);
-  -moz-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.4);
-  box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.4);
-  transition: box-shadow 0.5;
-
-  -moz-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-  transition: box-shadow 0.5s;
-  -moz-box-shadow-delay: 0.5s;
-  -webkit-box-shadow-delay: 0.5s;
-}
 .carousel {
   max-width: 1100px;
   margin: 0 auto;
@@ -168,9 +135,7 @@
   height: 570px;
   margin: 0 auto;
 }
-//.container {
-//margin: 0 auto;
-//}
+
 .carousel-control-prev-icon {
   //스크린샷 버튼
   background-color: rgb(245, 18, 75);
@@ -185,7 +150,6 @@
 }
 
 .container {
-  background-color: rgb(68, 55, 80);
   width: 100%;
   max-width: 9999px;
   height: 100%; //높이를 px고정된 수치가 아닌 %로 지정하여 배너공백 해결
@@ -193,26 +157,56 @@
 }
 .vava2 {
   margin: 0 auto;
-}
-.card-body {
+  transition: 0.7s;
 }
 
 .card-text {
+  font-family: "Courier New", Courier, monospace;
 }
 
+//하단 배너 이미지
 .card-img:hover {
   -webkit-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
   box-shadow: 2px 2px 3px 2px rgba(50, 50, 50, 0.4);
-  transition: box-shadow 0.5;
-
-  -moz-transition-delay: 0.5s;
-  transition-delay: 0.5s;
+  transition: 0.5s;
   transition: box-shadow 0.5s;
-  -moz-box-shadow-delay: 0.5s;
-  -webkit-box-shadow-delay: 0.5s;
 }
 .card-img {
   margin-top: 10px;
   transition: 0.5s;
+} //하단 배너 이미지
+
+//배경이미지 부분
+.bgimg2 {
+  background-image: url(../../../assets/home.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.bgimg {
+  background-image: url(../../../assets/bg.JPG);
+  background-size: 100%;
+}
+//배경이미지 부분
+
+.col-md-6 {
+  background: rgba(204, 201, 185, 0.247) !important;
+}
+.page-header {
+  font-size: 15px;
+}
+
+.col-md-8 {
+  margin: auto;
+
+  //margin-top: 205px; //하단 상자 길이조절
+}
+.bd-example {
+  max-width: 2500px;
+  margin: 0 auto;
 }

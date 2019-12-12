@@ -34,9 +34,9 @@ export class AuthService {
 
   //payment methods
   storeOrderData(paysave): Observable<any> {
-    const paysaveUrl = this.prepEndpoint("payments/paysave")
-    console.log(this.http.post(paysaveUrl, paysave, httpOptions))
-    return this.http.post(paysaveUrl, paysave, httpOptions)
+    const paysaveUrl = this.prepEndpoint("payments/paysave");
+    console.log(this.http.post(paysaveUrl, paysave, httpOptions));
+    return this.http.post(paysaveUrl, paysave, httpOptions);
   }
 
   getOrderdata(): Observable<any> {
@@ -94,6 +94,15 @@ export class AuthService {
     localStorage.setItem("user", JSON.stringify(user));
     this.authToken = token;
     this.user = user;
+  }
+
+  validatelogin(login) {
+    //로그인시 입력필드 체크
+    if (login.username == undefined || login.password == undefined) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   logout() {

@@ -20,9 +20,9 @@ export class RegisterComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
   onRegisterSubmit() {
     const user = {
       name: this.name,

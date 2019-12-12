@@ -1,5 +1,5 @@
-<div class="container">
-  <!----전체오브젝트를 감싸는 div-->
+<!----전체를 감싸는 div-->
+<div class="container ">
   <div class="container text-center">
     <div class="ppap">
       &nbsp;
@@ -30,9 +30,11 @@
           </div>
           <p></p>
           &nbsp;
-          <button type="submit" class="btn btn-block btn-primary btn-lg ">
-            로그인
-          </button>
+          <form (ngSubmit)="onLoginSubmit()">
+            <button type="submit" class="btn btn-block btn-primary btn-lg ">
+              로그인
+            </button>
+          </form>
           &nbsp;
           <div class="doyonknow">
             <p class="already">
@@ -43,13 +45,16 @@
             </p>
           </div>
           &nbsp;
-          <!--input type="submit" class="btn btn-primary" value="Login"/!-->
         </form>
       </div>
 
       <div class="contactus">
         <div>&nbsp;</div>
-        혹시 귀하의 계정에 문제가 발생했다면 저희에게 연락해주세요!
+
+        <a class="con">
+          &nbsp;혹시 귀하의 계정에 문제가 발생했다면 저희에게 연락해주세요!
+          &nbsp;</a
+        >
         <p>minecraft7777@google.com</p>
       </div>
     </div>

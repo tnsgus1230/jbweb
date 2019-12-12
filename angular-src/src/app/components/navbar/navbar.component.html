@@ -2,11 +2,11 @@
   &nbsp;
   <ul class="nav justify-content-center">
     <li class="nav-item">
-      <a class="nav-link  text-white" href="/">메뉴1 </a>
+      <a class="nav-link  text-white" href="/">서비스안내</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link text-white" href="/">메뉴2</a>
+      <a class="nav-link text-white" href="/">서버현황</a>
     </li>
 
     <li class="nav-item dropdown">
@@ -17,20 +17,20 @@
         aria-haspopup="true"
         href="#"
         data-toggle="dropdown"
-        >게시판</a
       >
+        게시판
+      </a>
       <div
         class="dropdown-menu"
         style="left: 0px; top: 1px; position: absolute; transform: translate3d(-36px, 34px, 0px);"
         x-placement="bottom-start"
       >
-        <a class="dropdown-item text-success" routerLink="/community"
-          >자유게시판</a
-        >
+        <a class="dropdown-item" routerLink="/board">자유게시판</a>
       </div>
     </li>
 
     &nbsp;&nbsp;&nbsp;&nbsp;
+    <!---간격을 위한 공백-->
 
     <img
       src="../../../assets//Minecraft-Logo-500x281.jpg"
@@ -45,7 +45,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link text-white" href="/">메뉴5</a>
+      <a class="nav-link text-white" href="/">정책</a>
     </li>
 
     <li class="nav-item dropdown">
@@ -63,11 +63,9 @@
         style="left: 0px; top: 1px; position: absolute; transform: translate3d(-27px, 34px, 0px);"
         x-placement="bottom-start"
       >
-        <a class="dropdown-item text-success" routerLink="/register"
-          >회원가입</a
-        >
+        <a class="dropdown-item " routerLink="/register">회원가입</a>
         &nbsp;
-        <a class="dropdown-item text-success" routerLink="/login">로그인</a>
+        <a class="dropdown-item " routerLink="/login">로그인</a>
       </div>
     </li>
   </ul>
