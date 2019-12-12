@@ -16,6 +16,10 @@ export class PayinfoComponent implements OnInit {
   cardnumber: string;
   expire: string;
   secretnum: number;
+
+  ptoken: string;
+  stoken: string;
+
   constructor(
     private validateService: ValidateService,
     private flashMessage: FlashMessagesService,
@@ -25,6 +29,15 @@ export class PayinfoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.ptoken = localStorage.getItem("ptoken")
+    this.stoken = localStorage.getItem("stoken")
+    if (this.ptoken == null || this.stoken == null) {
+      this.flashMessage.show("인증서 로그인이 되어있지 않습니다.", {
+        cssClass: "alert-danger text-center",
+        timeout: 3000
+      });
+      this.router.navigate(["/loginCA"])
+    }
   }
 
   onProceedSubmit() {
