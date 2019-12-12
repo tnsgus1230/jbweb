@@ -1,0 +1,56 @@
+2019-12-03 17:11:46 [INFO] Starting minecraft server version 1.5.2
+2019-12-03 17:11:46 [INFO] Loading properties
+2019-12-03 17:11:46 [WARNING] server.properties does not exist
+2019-12-03 17:11:46 [INFO] Generating new properties file
+2019-12-03 17:11:46 [INFO] Default game type: SURVIVAL
+2019-12-03 17:11:46 [INFO] Generating keypair
+2019-12-03 17:11:46 [INFO] Starting Minecraft server on *:25565
+2019-12-03 17:11:46 [INFO] This server is running CraftBukkit version git-Bukkit-1.5.1-R0.2-11-g8205884-b2765jnks (MC: 1.5.2) (Implementing API version 1.5.2-R0.1-SNAPSHOT)
+2019-12-03 17:11:46 [WARNING] Failed to load operators list: java.io.FileNotFoundException: .\ops.txt (ÁöÁ¤µÈ ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù)
+2019-12-03 17:11:46 [WARNING] Failed to load white-list: java.io.FileNotFoundException: .\white-list.txt (ÁöÁ¤µÈ ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù)
+2019-12-03 17:11:46 [INFO] Preparing level "world"
+2019-12-03 17:11:46 [INFO] Preparing start region for level 0 (Seed: -6541463949136616374)
+2019-12-03 17:11:47 [INFO] Preparing spawn area: 29%
+2019-12-03 17:11:48 [INFO] Preparing spawn area: 62%
+2019-12-03 17:11:49 [INFO] Preparing start region for level 1 (Seed: -6541463949136616374)
+2019-12-03 17:11:49 [INFO] Preparing spawn area: 0%
+2019-12-03 17:11:50 [INFO] Preparing spawn area: 37%
+2019-12-03 17:11:51 [INFO] Preparing spawn area: 83%
+2019-12-03 17:11:52 [INFO] Preparing start region for level 2 (Seed: -6541463949136616374)
+2019-12-03 17:11:52 [INFO] Preparing spawn area: 49%
+2019-12-03 17:11:53 [INFO] Done (7.022s)! For help, type "help" or "?"
+2019-12-03 17:12:10 [INFO] Starting minecraft server version 1.5.2
+2019-12-03 17:12:10 [INFO] Loading properties
+2019-12-03 17:12:10 [INFO] Default game type: SURVIVAL
+2019-12-03 17:12:10 [INFO] Generating keypair
+2019-12-03 17:12:10 [INFO] Starting Minecraft server on *:25565
+2019-12-03 17:12:10 [INFO] This server is running CraftBukkit version git-Bukkit-1.5.1-R0.2-11-g8205884-b2765jnks (MC: 1.5.2) (Implementing API version 1.5.2-R0.1-SNAPSHOT)
+2019-12-03 17:12:10 [INFO] Preparing level "world"
+2019-12-03 17:12:10 [WARNING] Unable to find spawn biome
+2019-12-03 17:12:10 [INFO] Preparing start region for level 0 (Seed: -3650647342065909083)
+2019-12-03 17:12:11 [INFO] Preparing spawn area: 29%
+2019-12-03 17:12:12 [INFO] Preparing spawn area: 66%
+2019-12-03 17:12:13 [INFO] Preparing start region for level 1 (Seed: -3650647342065909083)
+2019-12-03 17:12:13 [INFO] Preparing spawn area: 49%
+2019-12-03 17:12:14 [INFO] Preparing start region for level 2 (Seed: -3650647342065909083)
+2019-12-03 17:12:14 [INFO] Preparing spawn area: 83%
+2019-12-03 17:12:15 [INFO] Server permissions file permissions.yml is empty, ignoring it
+2019-12-03 17:12:15 [INFO] Done (4.419s)! For help, type "help" or "?"
+2019-12-03 17:12:19 [INFO] CONSOLE: Added slackid to white-list[m
+2019-12-03 17:12:26 [INFO] Starting minecraft server version 1.5.2
+2019-12-03 17:12:26 [INFO] Loading properties
+2019-12-03 17:12:26 [INFO] Default game type: SURVIVAL
+2019-12-03 17:12:26 [INFO] Generating keypair
+2019-12-03 17:12:26 [INFO] Starting Minecraft server on *:25565
+2019-12-03 17:12:26 [INFO] This server is running CraftBukkit version git-Bukkit-1.5.1-R0.2-11-g8205884-b2765jnks (MC: 1.5.2) (Implementing API version 1.5.2-R0.1-SNAPSHOT)
+2019-12-03 17:12:27 [INFO] Preparing level "world"
+2019-12-03 17:12:27 [INFO] Preparing start region for level 0 (Seed: 1794820843857776337)
+2019-12-03 17:12:28 [INFO] Preparing spawn area: 29%
+2019-12-03 17:12:29 [INFO] Preparing spawn area: 66%
+2019-12-03 17:12:30 [INFO] Preparing start region for level 1 (Seed: 1794820843857776337)
+2019-12-03 17:12:30 [INFO] Preparing spawn area: 20%
+2019-12-03 17:12:30 [INFO] Preparing start region for level 2 (Seed: 1794820843857776337)
+2019-12-03 17:12:31 [INFO] Preparing spawn area: 74%
+2019-12-03 17:12:31 [INFO] Server permissions file permissions.yml is empty, ignoring it
+2019-12-03 17:12:31 [INFO] Done (4.435s)! For help, type "help" or "?"
+2019-12-03 17:12:36 [INFO] CONSOLE: Added shade to white-list[m
