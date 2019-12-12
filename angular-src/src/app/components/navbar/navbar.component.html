@@ -44,11 +44,11 @@
         &nbsp;
         <a *ngIf="!checkLoggedIn()" class="dropdown-item " routerLink="/login">로그인</a>
         &nbsp;
-        <a *ngIf="checkLoggedIn()" class="dropdown-item " routerLink="/login">로그아웃</a>
+        <a *ngIf="checkLoggedIn()" class="dropdown-item " (click)="onLogoutClick()" routerLink="/login">로그아웃</a>
         &nbsp;
         <a *ngIf="checkLoggedIn()" class="dropdown-item " routerLink="/cert">인증서발급</a>
         &nbsp;
-        <a *ngIf="!checkLoggedIn()" class="dropdown-item " routerLink="/loginCA">인증서로그인</a>
+        <a *ngIf="checkLoggedIn()" class="dropdown-item " routerLink="/loginCA">인증서로그인</a>
         &nbsp;
         <a *ngIf="checkLoggedIn()" class="dropdown-item " (click)="onDeleteCertClick()"  href="#">인증서삭제</a>
       </div>

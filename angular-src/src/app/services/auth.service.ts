@@ -179,6 +179,8 @@ export class AuthService {
     this.ptoken = null;
     this.stoken = null;
     this.userNoPW = null;
+    this.authToken = null;
+    this.user = null;
     localStorage.removeItem('ptoken');
     localStorage.removeItem('stoken');
     localStorage.removeItem('user');
