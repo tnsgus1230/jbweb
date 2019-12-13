@@ -9,9 +9,6 @@ const addbor = require("./routes/addbor");
 const payments = require("./routes/payments");
 const app = express();
 const port = process.env.PORT || 3000;
-
-
-const fs = require('fs')
 const config = require("./config/database");
 
 mongoose.connect(config.database, { useNewUrlParser: true });
@@ -36,6 +33,13 @@ app.use("/payments", payments);
 
 
 app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/", (reg, res) => {
+  res.send("<h1> testing</h1><br/><h2>second line</h2>");
+});
+app.get("/test1", (reg, res) => {
+  res.send("<h1> testing1</h1>");
+});
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
