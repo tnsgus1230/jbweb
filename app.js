@@ -37,6 +37,9 @@ app.use("/payments", payments);
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`server started on port ${port}!`);
