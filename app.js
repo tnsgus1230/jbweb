@@ -9,7 +9,6 @@ const addbor = require("./routes/addbor");
 const payments = require("./routes/payments");
 const app = express();
 const port = process.env.PORT || 3000;
-require("./config/passport")(passport);
 
 
 const fs = require('fs')
@@ -24,23 +23,26 @@ mongoose.connection.on("error", err => {
 });
 
 app.use(cors());
-
-
-
 app.use(bodyparser.json());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
+require("./config/passport")(passport);
 
 app.use("/users", users);
 app.use("/addbor", addbor);
 app.use("/payments", payments);
 
+
 app.use(express.static(path.join(__dirname, "public")));
 
-
-
-
+app.get("/", (reg, res) => {
+  res.send("<h1> testing</h1><br/><h2>second line</h2>");
+});
+app.get("/test1", (reg, res) => {
+  res.send("<h1> testing1</h1>");
+});
 
 app.listen(port, () => {
   console.log(`server started on port ${port}!`);
