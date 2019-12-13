@@ -9,6 +9,7 @@ const addbor = require("./routes/addbor");
 const payments = require("./routes/payments");
 const app = express();
 const port = process.env.PORT || 3000;
+require("./config/passport")(passport);
 
 
 const fs = require('fs')
@@ -24,19 +25,18 @@ mongoose.connection.on("error", err => {
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "public")));
 
 
 app.use(bodyparser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-require("./config/passport")(passport);
 
 app.use("/users", users);
 app.use("/addbor", addbor);
 app.use("/payments", payments);
 
+app.use(express.static(path.join(__dirname, "public")));
 
 
 
