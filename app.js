@@ -30,8 +30,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
-console.log(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'Public')));
 // Body Parser Middleware
 app.use(bodyParser.json());
 
@@ -49,9 +48,8 @@ app.use("/payments", payments);
 app.get('/', (req, res) => {
   res.send('invaild');
 });
-app.get('/[^\.]+$', function (req, res) {
-  res.set('Content-Type', 'text/html')
-    .sendFile(path.join(__dirname, '/public/index.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Public/index.html'));
 });
 
 // Start Server
