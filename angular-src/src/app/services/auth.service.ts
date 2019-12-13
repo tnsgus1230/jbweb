@@ -29,10 +29,10 @@ export class AuthService {
   constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
   prepEndpoint(ep) {
     // 1. localhost에 포팅시
-    return "http://localhost:3000/" + ep;
+    //return "http://localhost:3000/" + ep;
 
     // 2. Heroku 클라우드 서버에 포팅시
-    // return ep;
+    return ep;
   }
 
   //whitelist register
