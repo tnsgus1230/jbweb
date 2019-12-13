@@ -48,6 +48,7 @@ app.use("/payments", payments);
 // Index Route
 app.get('/', (req, res) => {
   res.send('invaild endpoint');
+  console.log(res)
 });
 
 app.get('*', (req, res) => {
