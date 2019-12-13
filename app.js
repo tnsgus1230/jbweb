@@ -37,6 +37,10 @@ app.use("/payments", payments);
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
 app.get("/", (reg, res) => {
   res.send("<h1> testing</h1><br/><h2>second line</h2>");
 });
