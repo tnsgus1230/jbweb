@@ -37,12 +37,6 @@ app.use("/payments", payments);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (reg, res) => {
-  res.send("<h1> testing</h1><br/><h2>second line</h2>");
-});
-app.get("/test1", (reg, res) => {
-  res.send("<h1> testing1</h1>");
-});
 
 app.listen(port, () => {
   console.log(`server started on port ${port}!`);
