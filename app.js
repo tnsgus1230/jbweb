@@ -41,6 +41,7 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
+app.use(express.static('FORWARD2/public'))
 app.use('/users', users);
 app.use("/addbor", addbor);
 app.use("/payments", payments);
@@ -50,7 +51,7 @@ app.get('/', (req, res) => {
   res.send('invaild');
 });
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+  res.sendFile(path.join(__dirname, 'FORWARD2/public', 'index.html'));
 });
 
 // Start Server
