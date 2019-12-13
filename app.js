@@ -48,14 +48,15 @@ app.use("/payments", payments);
 // Index Route
 app.get('/', (req, res) => {
   res.send('invaild endpoint');
-  console.log(res)
 });
-
+console.log("1")
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+console.log("2")
 
 // Start Server
 app.listen(port, () => {
   console.log('Server started on port ' + port);
 });
+console.log("3")
