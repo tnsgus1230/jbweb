@@ -40,11 +40,8 @@ app.use("/payments", payments);
 
 
 
-app.get("/", (reg, res) => {
-  res.send("<h1> testing</h1><br/><h2>second line</h2>");
-});
-app.get("/test1", (reg, res) => {
-  res.send("<h1> testing1</h1>");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.listen(port, () => {
