@@ -42,10 +42,6 @@ app.use("/payments", payments);
 
 
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
 app.listen(port, () => {
   console.log(`server started on port ${port}!`);
 });
