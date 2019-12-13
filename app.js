@@ -1,27 +1,32 @@
-const express = require("express");
+const express = require("express"); //const는 상수선언
 const path = require("path");
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const passport = require("passport");
 const mongoose = require("mongoose");
-const users = require("./routes/users");
-const addbor = require("./routes/addbor");
-const payments = require("./routes/payments");
 const app = express();
-const port = process.env.PORT || 3000;
+const users = require("./routes/users");
+const addbor = require("./routes/addbor")
 const config = require("./config/database");
 
 mongoose.connect(config.database, { useNewUrlParser: true });
+
 mongoose.connection.on("connected", () => {
-  console.log("Connected to Database " + config.database);
-});
-mongoose.connection.on("error", err => {
-  console.log("Database error: " + err);
+  console.log("connect to " + config.database);
 });
 
+//  포트 번호
+const port = process.env.PORT || 3000;
+
+//cors 미들웨어
 app.use(cors());
-app.use(bodyparser.json());
 
+//set static folder
+app.use(express.static(path.join(__dirname, "public")));
+
+//bodyparser middleware
+app.use(bodyparser.json());
+//패스포트 미들웨어 선언
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -31,20 +36,12 @@ app.use("/users", users);
 app.use("/addbor", addbor);
 app.use("/payments", payments);
 
-
-app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", (reg, res) => {
-  res.send("<h1> testing</h1><br/><h2>second line</h2>");
-});
-app.get("/test1", (reg, res) => {
-  res.send("<h1> testing1</h1>");
-});
-
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`server started on port ${port}!`);
+//시작 서버
+app.listen(port, function () {
+  console.log("server started on port" + port);
 });
+//nodemon 은 코드를 수정할시에 서버 재시작
